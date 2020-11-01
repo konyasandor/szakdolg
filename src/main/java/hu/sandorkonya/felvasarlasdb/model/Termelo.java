@@ -15,20 +15,21 @@ public class Termelo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String nev;
-	private String lnev;
-	private Integer ostermeloiIgazolvanySzam;
-	private Date ostermeloiIgazolvanyErvenyesseg;
-	private Integer adoazonositoJel;
-	private Integer adoSzam;
-	private Date szuletesiIdo;
-	private String szuletesiHely;
-	private String edesAnyjaNeve ;
-	private Integer tajSzam;
-	private Integer csaladiGazdasagSzam;
-	private Integer GlobalGapSzam;
-	private Integer telefonSzam;
-	private Integer bankszamlaSzam;
+	private String termeloNev;
+	private String termeloLnev;
+	private String termeloCim;
+	private Integer termeloOstermeloiIgazolvanySzam;
+	private Date termeloOstermeloiIgazolvanyErvenyesseg;
+	private Integer termeloAdoazonositoJel;
+	private Integer termeloAdoSzam;
+	private Date termeloSzuletesiIdo;
+	private String termeloSzuletesiHely;
+	private String termeloEdesAnyjaNeve ;
+	private Integer termeloTajSzam;
+	private Integer termeloCsaladiGazdasagSzam;
+	private Integer termeloGlobalGapSzam;
+	private Integer termeloTelefonSzam;
+	private Integer termeloBankszamlaSzam;
 	
 	
 	public Termelo() {
@@ -36,28 +37,29 @@ public class Termelo {
 	}
 
 
-	public Termelo(Long id, String nev, String lnev, Integer ostermeloiIgazolvanySzam,
-			Date ostermeloiIgazolvanyErvenyesseg, Integer adoazonositoJel, Integer adoSzam, Date szuletesiIdo,
-			String szuletesiHely, String edesAnyjaNeve, Integer tajSzam, Integer csaladiGazdasagSzam,
-			Integer globalGapSzam, Integer telefonSzam, Integer bankszamlaSzam) {
+	public Termelo(Long id, String termeloNev, String termeloLnev, String termeloCim,
+			Integer termeloOstermeloiIgazolvanySzam, Date termeloOstermeloiIgazolvanyErvenyesseg,
+			Integer termeloAdoazonositoJel, Integer termeloAdoSzam, Date termeloSzuletesiIdo,
+			String termeloSzuletesiHely, String termeloEdesAnyjaNeve, Integer termeloTajSzam,
+			Integer termeloCsaladiGazdasagSzam, Integer termeloGlobalGapSzam, Integer termeloTelefonSzam,
+			Integer termeloBankszamlaSzam) {
 		super();
 		this.id = id;
-		this.nev = nev;
-		this.lnev = lnev;
-		this.ostermeloiIgazolvanySzam = ostermeloiIgazolvanySzam;
-		this.ostermeloiIgazolvanyErvenyesseg = ostermeloiIgazolvanyErvenyesseg;
-		this.adoazonositoJel = adoazonositoJel;
-		this.adoSzam = adoSzam;
-		this.szuletesiIdo = szuletesiIdo;
-		this.szuletesiHely = szuletesiHely;
-		this.edesAnyjaNeve = edesAnyjaNeve;
-		this.tajSzam = tajSzam;
-		this.csaladiGazdasagSzam = csaladiGazdasagSzam;
-		this.GlobalGapSzam = globalGapSzam;
-		this.telefonSzam = telefonSzam;
-		this.bankszamlaSzam = bankszamlaSzam;
-		
-		
+		this.termeloNev = termeloNev;
+		this.termeloLnev = termeloLnev;
+		this.termeloCim = termeloCim;
+		this.termeloOstermeloiIgazolvanySzam = termeloOstermeloiIgazolvanySzam;
+		this.termeloOstermeloiIgazolvanyErvenyesseg = termeloOstermeloiIgazolvanyErvenyesseg;
+		this.termeloAdoazonositoJel = termeloAdoazonositoJel;
+		this.termeloAdoSzam = termeloAdoSzam;
+		this.termeloSzuletesiIdo = termeloSzuletesiIdo;
+		this.termeloSzuletesiHely = termeloSzuletesiHely;
+		this.termeloEdesAnyjaNeve = termeloEdesAnyjaNeve;
+		this.termeloTajSzam = termeloTajSzam;
+		this.termeloCsaladiGazdasagSzam = termeloCsaladiGazdasagSzam;
+		this.termeloGlobalGapSzam = termeloGlobalGapSzam;
+		this.termeloTelefonSzam = termeloTelefonSzam;
+		this.termeloBankszamlaSzam = termeloBankszamlaSzam;
 	}
 
 
@@ -71,144 +73,156 @@ public class Termelo {
 	}
 
 
-	public String getNev() {
-		return nev;
+	public String getTermeloNev() {
+		return termeloNev;
 	}
 
 
-	public void setNev(String nev) {
-		this.nev = nev;
+	public void setTermeloNev(String termeloNev) {
+		this.termeloNev = termeloNev;
 	}
 
 
-	public String getLnev() {
-		return lnev;
+	public String getTermeloLnev() {
+		return termeloLnev;
 	}
 
 
-	public void setLnev(String lnev) {
-		this.lnev = lnev;
+	public void setTermeloLnev(String termeloLnev) {
+		this.termeloLnev = termeloLnev;
 	}
 
 
-	public Integer getOstermeloiIgazolvanySzam() {
-		return ostermeloiIgazolvanySzam;
+	public String getTermeloCim() {
+		return termeloCim;
 	}
 
 
-	public void setOstermeloiIgazolvanySzam(Integer ostermeloiIgazolvanySzam) {
-		this.ostermeloiIgazolvanySzam = ostermeloiIgazolvanySzam;
+	public void setTermeloCim(String terneloCim) {
+		this.termeloCim = terneloCim;
 	}
 
 
-	public Date getOstermeloiIgazolvanyErvenyesseg() {
-		return ostermeloiIgazolvanyErvenyesseg;
+	public Integer getTermeloOstermeloiIgazolvanySzam() {
+		return termeloOstermeloiIgazolvanySzam;
 	}
 
 
-	public void setOstermeloiIgazolvanyErvenyesseg(Date ostermeloiIgazolvanyErvenyesseg) {
-		this.ostermeloiIgazolvanyErvenyesseg = ostermeloiIgazolvanyErvenyesseg;
+	public void setTermeloOstermeloiIgazolvanySzam(Integer termeloOstermeloiIgazolvanySzam) {
+		this.termeloOstermeloiIgazolvanySzam = termeloOstermeloiIgazolvanySzam;
 	}
 
 
-	public Integer getAdoazonositoJel() {
-		return adoazonositoJel;
+	public Date getTermeloOstermeloiIgazolvanyErvenyesseg() {
+		return termeloOstermeloiIgazolvanyErvenyesseg;
 	}
 
 
-	public void setAdoazonositoJel(Integer adoazonositoJel) {
-		this.adoazonositoJel = adoazonositoJel;
+	public void setTermeloOstermeloiIgazolvanyErvenyesseg(Date termeloOstermeloiIgazolvanyErvenyesseg) {
+		this.termeloOstermeloiIgazolvanyErvenyesseg = termeloOstermeloiIgazolvanyErvenyesseg;
 	}
 
 
-	public Integer getAdoSzam() {
-		return adoSzam;
+	public Integer getTermeloAdoazonositoJel() {
+		return termeloAdoazonositoJel;
 	}
 
 
-	public void setAdoSzam(Integer adoSzam) {
-		this.adoSzam = adoSzam;
+	public void setTermeloAdoazonositoJel(Integer termeloAdoazonositoJel) {
+		this.termeloAdoazonositoJel = termeloAdoazonositoJel;
 	}
 
 
-	public Date getSzuletesiIdo() {
-		return szuletesiIdo;
+	public Integer getTermeloAdoSzam() {
+		return termeloAdoSzam;
 	}
 
 
-	public void setSzuletesiIdo(Date szuletesiIdo) {
-		this.szuletesiIdo = szuletesiIdo;
+	public void setTermeloAdoSzam(Integer termeloAdoSzam) {
+		this.termeloAdoSzam = termeloAdoSzam;
 	}
 
 
-	public String getSzuletesiHely() {
-		return szuletesiHely;
+	public Date getTermeloSzuletesiIdo() {
+		return termeloSzuletesiIdo;
 	}
 
 
-	public void setSzuletesiHely(String szuletesiHely) {
-		this.szuletesiHely = szuletesiHely;
+	public void setTermeloSzuletesiIdo(Date termeloSzuletesiIdo) {
+		this.termeloSzuletesiIdo = termeloSzuletesiIdo;
 	}
 
 
-	public String getEdesAnyjaNeve() {
-		return edesAnyjaNeve;
+	public String getTermeloSzuletesiHely() {
+		return termeloSzuletesiHely;
 	}
 
 
-	public void setEdesAnyjaNeve(String edesAnyjaNeve) {
-		this.edesAnyjaNeve = edesAnyjaNeve;
+	public void setTermeloSzuletesiHely(String termeloSzuletesiHely) {
+		this.termeloSzuletesiHely = termeloSzuletesiHely;
 	}
 
 
-	public Integer getTajSzam() {
-		return tajSzam;
+	public String getTermeloEdesAnyjaNeve() {
+		return termeloEdesAnyjaNeve;
 	}
 
 
-	public void setTajSzam(Integer tajSzam) {
-		this.tajSzam = tajSzam;
+	public void setTermeloEdesAnyjaNeve(String termeloEdesAnyjaNeve) {
+		this.termeloEdesAnyjaNeve = termeloEdesAnyjaNeve;
 	}
 
 
-	public Integer getCsaladiGazdasagSzam() {
-		return csaladiGazdasagSzam;
+	public Integer getTermeloTajSzam() {
+		return termeloTajSzam;
 	}
 
 
-	public void setCsaladiGazdasagSzam(Integer csaladiGazdasagSzam) {
-		this.csaladiGazdasagSzam = csaladiGazdasagSzam;
+	public void setTermeloTajSzam(Integer termeloTajSzam) {
+		this.termeloTajSzam = termeloTajSzam;
 	}
 
 
-	public Integer getGlobalGapSzam() {
-		return GlobalGapSzam;
+	public Integer getTermeloCsaladiGazdasagSzam() {
+		return termeloCsaladiGazdasagSzam;
 	}
 
 
-	public void setGlobalGapSzam(Integer globalGapSzam) {
-		GlobalGapSzam = globalGapSzam;
+	public void setTermeloCsaladiGazdasagSzam(Integer termeloCsaladiGazdasagSzam) {
+		this.termeloCsaladiGazdasagSzam = termeloCsaladiGazdasagSzam;
 	}
 
 
-	public Integer getTelefonSzam() {
-		return telefonSzam;
+	public Integer getTermeloGlobalGapSzam() {
+		return termeloGlobalGapSzam;
 	}
 
 
-	public void setTelefonSzam(Integer telefonSzam) {
-		this.telefonSzam = telefonSzam;
+	public void setTermeloGlobalGapSzam(Integer termeloGlobalGapSzam) {
+		this.termeloGlobalGapSzam = termeloGlobalGapSzam;
 	}
 
 
-	public Integer getBankszamlaSzam() {
-		return bankszamlaSzam;
+	public Integer getTermeloTelefonSzam() {
+		return termeloTelefonSzam;
 	}
 
 
-	public void setBankszamlaSzam(Integer bankszamlaSzam) {
-		this.bankszamlaSzam = bankszamlaSzam;
+	public void setTermeloTelefonSzam(Integer termeloTelefonSzam) {
+		this.termeloTelefonSzam = termeloTelefonSzam;
 	}
+
+
+	public Integer getTermeloBankszamlaSzam() {
+		return termeloBankszamlaSzam;
+	}
+
+
+	public void setTermeloBankszamlaSzam(Integer termeloBankszamlaSzam) {
+		this.termeloBankszamlaSzam = termeloBankszamlaSzam;
+	}
+	
+	
 	
 	
 	

@@ -18,5 +18,9 @@ public class TermeloService {
 		return termeloRepository.findAll();
 	}
 	
+	public void save(Termelo termelo) {
+		termeloRepository.save(termelo);
+	}
+	
 	
 }
