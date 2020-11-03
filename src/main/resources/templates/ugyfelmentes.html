@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org"	layout:decorator="main">
+<head>
+	<meta charset="utf-8" />
+	<title>Felvásárlás</title>
+</head>
+<body>
+
+	<div layout:fragment="content">
+		
+		<div class="container">
+			<form name="ujtermelo" th:action="@{/ujtermelo}" th:object="${termelo}"  method="POST">
+			  <div class="form-group">
+			    <label for="termeloNev">Név</label>
+			    <input type="text" class="form-control" id="termeloNev" th:field="*{termeloNev}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloLnev">Leánykori név</label>
+			    <input type="text" class="form-control" id="termeloLnev" th:field="*{termeloLnev}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloCim">Cím</label>
+			    <input type="text" class="form-control" id="termeloCim" th:field="*{termeloCim}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloSzuletesiHely">Születési hely</label>
+			    <input type="text" class="form-control" id="termeloSzuletesiHely" th:field="*{termeloSzuletesiHely}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloSzuletesiIdo">Születési idő</label>
+			    <input type="date" class="form-control" id="termeloSzuletesiIdo" min="1900-01-01" max="2020-01-01" th:field="*{termeloSzuletesiIdo}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloEdesAnyjaNeve">Édesanyja Neve</label>
+			    <input type="text" class="form-control" id="termeloEdesAnyjaNeve" th:field="*{termeloEdesAnyjaNeve}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloTelefonSzam">Telefonszám</label>
+			    <input type="text" class="form-control" id="termeloTelefonSzam" maxlength="30" th:field="*{termeloTelefonSzam}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloTajSzam">TAJ Szám</label>
+			    <input type="text" class="form-control" id="termeloTajSzam" maxlength="12" th:field="*{termeloTajSzam}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloOstermeloiIgazolvanySzam">Őstermelői igazolvány szám</label>
+			    <input type="text" class="form-control" id="termeloOstermeloiIgazolvanySzam" th:field="*{termeloOstermeloiIgazolvanySzam}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloOstermeloiIgazolvanyErvenyesseg">Őstermelő Igazolvány érvényesség</label>
+			    <input type="date" class="form-control" id="termeloOstermeloiIgazolvanyErvenyesseg" min="1990-01-01" max="2025-01-01" th:field="*{termeloOstermeloiIgazolvanyErvenyesseg}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloAdoazonositoJel">Adóazonosító jel</label>
+			    <input type="text" class="form-control" id="termeloAdoazonositoJel" th:field="*{termeloAdoazonositoJel}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloAdoSzam">Adószám</label>
+			    <input type="text" class="form-control" id="termeloAdoSzam" th:field="*{termeloAdoSzam}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloCsaladiGazdasagSzam">Családi gazdaság szám</label>
+			    <input type="text" class="form-control" id="termeloCsaladiGazdasagSzam" th:field="*{termeloCsaladiGazdasagSzam}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloGlobalGapSzam">Global Gap szám</label>
+			    <input type="text" class="form-control" id="termeloGlobalGapSzam" th:field="*{termeloGlobalGapSzam}">
+			  </div>
+			  <div class="form-group">
+			    <label for="termeloBankszamlaSzam">Bankszámlaszám</label>
+			    <input type="text" class="form-control" id="termeloBankszamlaSzam" th:field="*{termeloBankszamlaSzam}">
+			  </div>
+			  <button type="submit" class="btn btn-primary">Mentés</button>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
