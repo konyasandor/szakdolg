@@ -15,5 +15,6 @@ public interface TermeloRepository extends JpaRepository<Termelo, Long> {
 
 	
 	
+	
 
 }

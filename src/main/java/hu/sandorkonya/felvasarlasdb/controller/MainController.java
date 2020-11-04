@@ -16,16 +16,28 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import hu.sandorkonya.felvasarlasdb.model.Beallitas;
+import hu.sandorkonya.felvasarlasdb.model.Keszlet;
 import hu.sandorkonya.felvasarlasdb.model.Termelo;
+import hu.sandorkonya.felvasarlasdb.service.BeallitasService;
+import hu.sandorkonya.felvasarlasdb.service.KeszletService;
 import hu.sandorkonya.felvasarlasdb.service.TermeloService;
+import javassist.expr.NewArray;
 
 @Controller
 public class MainController {
 	
 	@Autowired
 	private TermeloService termeloService;
+	
+	@Autowired
+	private BeallitasService beallitasService;
+	
+	@Autowired
+	private KeszletService keszletService;
 	
 	
 	//If the date of the String type passed by the current page does not match the Date type of the background entity class, you need to add this method.
@@ -42,7 +54,10 @@ public class MainController {
 	
 	//**********************   Mérlegjegy ***************************//
 	@GetMapping("/termelomerlegjegy")
-	public String termelomerlegjegy(){
+	public String termelomerlegjegy(Model model){
+		model.addAttribute("keszlet", new Keszlet());
+		
+		model.addAttribute("beallitas", beallitasService.findAll());
 		return "termelomerlegjegy";
 	}
 	
@@ -92,15 +107,30 @@ public class MainController {
 		
 		model.addAttribute("termelo", termeloService.edit(termelo));
 		
-		return "ugyfelszerkesztes";
+		return "ugyfelszerkesztesment";
 		
+	}
+	
+	@PostMapping("/ugyfelszerkesztesment")
+	public String postIndexEdit(@ModelAttribute Termelo termeloModositott) {
+		
+		termeloService.save(termeloModositott);
+		return "redirect:/ugyfelszerkesztes";
 	}
 	
 	
 	//**********************   Beállítás ****************************//
 	@GetMapping("/beallitas")
-	public String beallitas(){
+	public String beallitas(Model model){
+		model.addAttribute("beallitas", new Beallitas() );
 		return "beallitas";
+	}
+	
+	@PostMapping("/ujbeallitas")
+	public String postIndexBeallitas(@ModelAttribute Beallitas beallitas) {
+		
+		beallitasService.save(beallitas);
+		return "redirect:/beallitas";
 	}
 
 }

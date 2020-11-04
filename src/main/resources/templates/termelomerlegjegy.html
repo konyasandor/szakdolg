@@ -8,9 +8,124 @@
 		
 	<div layout:fragment="content">
 		
-		<h2>Termelő mérlegjegy menü</h2>
+		<h2>Termelő mérlegjegy készítése</h2>
+		
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">I. osztály ár</th>
+		      <th scope="col">II. osztály ár</th>
+		      <th scope="col">II. osztály ár</th>
+		      <th scope="col">IV. osztály ár</th>
+		      <th scope="col">Vastag gyökér ár</th>
+		      <th scope="col">Vékony gyökér ár</th>
+		    </tr>
+		  </thead>
+		  <tbody th:each="beallitas : ${beallitas}">
+		    <tr>
+		      <th ></th>
+		      <td th:text="${beallitas.elsoOsztalyAr}">Mark</td>
+		      <td th:text="${beallitas.masodOsztalyAr}">Otto</td>
+		      <td th:text="${beallitas.harmadOsztalyAr}">@mdo</td>
+		      <td th:text="${beallitas.negyedOsztalyAr}">@mdo</td>
+		      <td th:text="${beallitas.vastagGyokerAr}">@mdo</td>
+		      <td th:text="${beallitas.vekonyGyokerAr}">@mdo</td>
+		    </tr>
+		    
+		  </tbody>
+		</table>
+		
+		<form action="" class="form-group">
+			<div class=" form-group row ">
+				<div class="col">
+					<label>I. osztály mérés</label>
+				</div>
+				<div class="col">
+					<input type="text" id="elsoMeresegy" class="form-control">
+				</div>
+				<div class="col">
+					<input type="text" id="elsoMeresKetto" class="form-control">
+				</div>
+				<div class="col">
+					<label id="eredmény"></label>
+				</div>
+			</div>
+			</form>
+			<div class="row">
+				<div class="col3">
+					<label>II. osztály mérés</label>
+				</div>
+				<div class="col3">
+					<input type="text" id="masodMeresegy">
+				</div>
+				<div class="col3">
+					<input type="text" id="masodMeresKetto">
+				</div>
+				<div class="col3">
+					<label id="eredmény"></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col3">
+					<label>III. osztály mérés</label>
+				</div>
+				<div class="col3">
+					<input type="text" id="harmadMeresegy">
+				</div>
+				<div class="col3">
+					<input type="text" id="harmadMeresKetto">
+				</div>
+				<div class="col3">
+					<label id="eredmény"></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<label>IV. osztály mérés</label>
+				</div>
+				<div class="col">
+					<input type="text" id="negyedMeresegy">
+				</div>
+				<div class="col">
+					<input type="text" id="negyedMeresKetto">
+				</div>
+				<div class="col">
+					<label id="eredmény"></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<label>Vastag gyökér mérés</label>
+				</div>
+				<div class="col">
+					<input type="text" id="vastagMeresegy">
+				</div>
+				<div class="col">
+					<input type="text" id="vastagMeresKetto">
+				</div>
+				<div class="col">
+					<label id="eredmény"></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<label>Vékony gyökér mérés</label>
+				</div>
+				<div class="col">
+					<input type="text" id="vékonyMeresegy">
+				</div>
+				<div class="col">
+					<input type="text" id="vékonyMeresKetto">
+				</div>
+				<div class="col">
+					<label id="eredmény"></label>
+				</div>
+			</div>
+		
+		</div>
 
-	</div>
+	
 
 </body>
 </html>

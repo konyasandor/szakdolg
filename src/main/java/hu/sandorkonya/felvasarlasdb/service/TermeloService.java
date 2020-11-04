@@ -32,4 +32,6 @@ public class TermeloService {
 		
 		return termeloRepository.findById(id);
 	}
+	
+	
 }
