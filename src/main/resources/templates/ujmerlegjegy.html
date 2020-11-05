@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="hu"	layout:decorator="main">
+<head>
+	<meta charset="utf-8" />
+	<title>Felvásárlás</title>
+</head>
+<body>
+		
+	<div layout:fragment="content" >
+		
+		<h2>Termelő mérlegjegy készítése</h2>
+		
+		<div class="container-fluid">
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">I. osztály ár</th>
+			      <th scope="col">II. osztály ár</th>
+			      <th scope="col">II. osztály ár</th>
+			      <th scope="col">IV. osztály ár</th>
+			      <th scope="col">Vastag gyökér ár</th>
+			      <th scope="col">Vékony gyökér ár</th>
+			    </tr>
+			  </thead>
+			  <tbody th:each="beallitas : ${beallitas}">
+			    <tr>
+			      <th ></th>
+			      <td th:text="${beallitas.elsoOsztalyAr}">Mark</td>
+			      <td th:text="${beallitas.masodOsztalyAr}">Otto</td>
+			      <td th:text="${beallitas.harmadOsztalyAr}">@mdo</td>
+			      <td th:text="${beallitas.negyedOsztalyAr}">@mdo</td>
+			      <td th:text="${beallitas.vastagGyokerAr}">@mdo</td>
+			      <td th:text="${beallitas.vekonyGyokerAr}">@mdo</td>
+			    </tr>
+			    
+			  </tbody>
+			</table>
+		</div>
+		<br>
+		
+		<hr>
+		
+		<br>
+		
+		
+		<div class="container-fluid">
+			<form name="termelokeresmerleg" action=termelokeresmerleg  method="GET">
+				<div class="form-group">
+			    	<label for="termeloNevKeres">Név</label>
+			    	<input type="text" class="form-control" id="termeloNevKeres" name="termeloNevKeres">
+			  	</div>
+			  <button type="submit" class="btn btn-primary">Keresés</button>
+			</form>
+			
+		</div>
+		
+		<div class="container-fluid">
+			<table class="table">
+				<thead>
+				    <tr>
+				      <th scope="col">ID</th>
+				      <th scope="col">Név</th>
+				      <th scope="col">Cím</th>
+				      <th scope="col">Telefonszám</th>
+				      <th scope="col"></th>
+				    </tr>
+				 </thead>
+				<tbody th:each="termelo : ${termelok}">
+				    <tr>
+				      <td th:text="${termelo.id}">Mark</td>
+				      <td th:text="${termelo.termeloNev}">Mark</td>
+				      <td th:text="${termelo.termeloCim}">Otto</td>
+				      <td th:text="${termelo.termeloTelefonSzam}">sdf</td>
+				      <td><a > <i
+							class="material-icons">create</i></td>
+				      
+				    </tr>
+				    
+			  	</tbody>
+			</table>
+		
+		</div>
+		<br>
+		
+		<hr>
+		
+		<br>
+		<div class="container-fluid">
+			<form action="" class="form-group  ">
+				<div class="form-group row ">
+					<div class="col-sm-3">
+						<label>I. osztály mérés</label>
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="elsoMeresegy" class="form-control">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="elsoMeresKetto" class="form-control">
+					</div>
+					<div class="col-sm-3">
+						<label id="eredmény"></label>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3">
+						<label>II. osztály mérés</label>
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="masodMeresegy" class="form-control">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="masodMeresKetto" class="form-control">
+					</div>
+					<div class="col-sm-3">
+						<label id="eredmény"></label>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3">
+						<label>III. osztály mérés</label>
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="harmadMeresegy" class="form-control">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="harmadMeresKetto" class="form-control">
+					</div>
+					<div class="col-sm-3">
+						<label id="eredmény"></label>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3">
+						<label>IV. osztály mérés</label>
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="negyedMeresegy" class="form-control">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="negyedMeresKetto" class="form-control">
+					</div>
+					<div class="col-sm-3">
+						<label id="eredmény"></label>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3">
+						<label>Vastag gyökér mérés</label>
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="vastagMeresegy" class="form-control">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="vastagMeresKetto" class="form-control">
+					</div>
+					<div class="col-sm-3">
+						<label id="eredmény"></label>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3">
+						<label>Vékony gyökér mérés</label>
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="vékonyMeresegy" class="form-control">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="vékonyMeresKetto" class="form-control">
+					</div>
+					<div class="col-sm-3">
+						<label id="eredmény"></label>
+					</div>
+				</div>
+			</form>
+			
+		</div>
+		
+		<br>
+		
+		<hr>
+		
+		<br>
+		
+		<div class="container-fluid">
+			<form name="ujmerlegjegy" th:action="@{/ujmerlegjegy}" th:object="${keszlet}"  method="POST">
+			  
+			  <div class="form-group">
+			    <label for="tId">Termelő ID</label>
+			    <input type="text" class="form-control" id="tId"  th:field="*{tId}">
+			  </div>
+			  <div class="form-group">
+			    <label for="tNev">Termelő Név</label>
+			    <input type="text" class="form-control" id="tNev"  th:field="*{tNev}">
+			  </div>
+			  
+			  <div class="form-group">
+			    <label for="elsoOsztalySuly">I. osztály nettó súly</label>
+			    <input type="text" class="form-control" id="elsoOsztalySuly" th:field="*{elsoOsztalySuly}">
+			  </div>
+			  <div class="form-group">
+			    <label for="masodOsztalySuly">II. osztály nettó súly</label>
+			    <input type="text" class="form-control" id="masodOsztalySuly" th:field="*{masodOsztalySuly}">
+			  </div>
+			  <div class="form-group">
+			    <label for="harmadOsztalySuly">III. osztály nettó súly</label>
+			    <input type="text" class="form-control" id="harmadOsztalySuly" th:field="*{harmadOsztalySuly}">
+			  </div>
+			  <div class="form-group">
+			    <label for="negyedOsztalySuly">IV. osztály nettó súly</label>
+			    <input type="text" class="form-control" id="negyedOsztalySuly" th:field="*{negyedOsztalySuly}">
+			  </div>
+			  <div class="form-group">
+			    <label for="vastagGyokerSuly">Vastag gyökér nettó súly</label>
+			    <input type="text" class="form-control" id="vastagGyokerSuly" th:field="*{vastagGyokerSuly}">
+			  </div>
+			  <div class="form-group">
+			    <label for="vekonyGyokerSuly">Vékony gyökér nettó súly</label>
+			    <input type="text" class="form-control" id="vekonyGyokerSuly" th:field="*{vekonyGyokerSuly}">
+			  </div>
+			  <div class="form-group">
+			    <label for="osszAr">Leadás összértéke</label>
+			    <input type="text" class="form-control" id="osszAr"  th:field="*{osszAr}">
+			  </div>
+			  
+			  <button type="submit" class="btn btn-primary">Mentés</button>
+			</form>
+		
+		</div>
+		
+		<br>
+		
+		<hr>
+		
+		<br>
+		
+		</div>
+		
+		
+
+	
+
+</body>
+</html>

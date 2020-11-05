@@ -14,6 +14,8 @@ public class Keszlet {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	private Long tId;
+	private String tNev;
 	private Integer elsoOsztalySuly;
 	private Integer masodOsztalySuly;
 	private Integer harmadOsztalySuly;
@@ -26,10 +28,12 @@ public class Keszlet {
 		super();
 	}
 
-	public Keszlet(Long id, Integer elsoOsztalySuly, Integer masodOsztalySuly, Integer harmadOsztalySuly,
+	public Keszlet(Long id, Long tId, String tNev, Integer elsoOsztalySuly, Integer masodOsztalySuly, Integer harmadOsztalySuly,
 			Integer negyedOsztalySuly, Integer vastagGyokerSuly, Integer vekonyGyokerSuly, Integer osszAr) {
 		super();
 		this.id = id;
+		this.tId = tId;
+		this.tNev = tNev;
 		this.elsoOsztalySuly = elsoOsztalySuly;
 		this.masodOsztalySuly = masodOsztalySuly;
 		this.harmadOsztalySuly = harmadOsztalySuly;
@@ -45,6 +49,22 @@ public class Keszlet {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Long gettId() {
+		return tId;
+	}
+
+	public void settId(Long tId) {
+		this.tId = tId;
+	}
+
+	public String gettNev() {
+		return tNev;
+	}
+
+	public void setTNev(String tNev) {
+		this.tNev = tNev;
 	}
 
 	public Integer getElsoOsztalySuly() {

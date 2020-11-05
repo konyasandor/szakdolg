@@ -54,11 +54,27 @@ public class MainController {
 	
 	//**********************   Mérlegjegy ***************************//
 	@GetMapping("/termelomerlegjegy")
-	public String termelomerlegjegy(Model model){
-		model.addAttribute("keszlet", new Keszlet());
+	public String termelomerlegjegy( Model model){
+		
 		
 		model.addAttribute("beallitas", beallitasService.findAll());
 		return "termelomerlegjegy";
+	}
+	
+	@GetMapping("/termelokeresmerleg")
+	public String SearchMerleg(@RequestParam String termeloNevKeres, Model model) {
+		
+		model.addAttribute("termelok", termeloService.search(termeloNevKeres));
+		
+		return "termelomerlegjegy";
+		
+	}
+	
+	@PostMapping("/ujmerlegjegy")
+	public String postIndexMerlegjegy(@ModelAttribute Keszlet keszlet) {
+		
+		keszletService.save(keszlet);
+		return "redirect:/termelomerlegjegy";
 	}
 	
 	//**********************   Felvasarlasi jegy ********************//
