@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +15,9 @@ public class Keszlet {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	//private Long tId;
+	//private String tNev;
+	
 	private Long tId;
 	private String tNev;
 	private Integer elsoOsztalySuly;
@@ -23,13 +27,14 @@ public class Keszlet {
 	private Integer vastagGyokerSuly;
 	private Integer vekonyGyokerSuly;
 	private Integer osszAr;
+	private Boolean vevo;
 	
 	public Keszlet() {
 		super();
 	}
 
 	public Keszlet(Long id, Long tId, String tNev, Integer elsoOsztalySuly, Integer masodOsztalySuly, Integer harmadOsztalySuly,
-			Integer negyedOsztalySuly, Integer vastagGyokerSuly, Integer vekonyGyokerSuly, Integer osszAr) {
+			Integer negyedOsztalySuly, Integer vastagGyokerSuly, Integer vekonyGyokerSuly, Integer osszAr,Boolean vevo) {
 		super();
 		this.id = id;
 		this.tId = tId;
@@ -41,15 +46,14 @@ public class Keszlet {
 		this.vastagGyokerSuly = vastagGyokerSuly;
 		this.vekonyGyokerSuly = vekonyGyokerSuly;
 		this.osszAr = osszAr;
+		this.vevo = vevo;
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 
 	public Long gettId() {
 		return tId;
@@ -63,7 +67,7 @@ public class Keszlet {
 		return tNev;
 	}
 
-	public void setTNev(String tNev) {
+	public void settNev(String tNev) {
 		this.tNev = tNev;
 	}
 
@@ -122,6 +126,16 @@ public class Keszlet {
 	public void setOsszAr(Integer osszAr) {
 		this.osszAr = osszAr;
 	}
+
+	public Boolean getVevo() {
+		return vevo;
+	}
+
+	public void setVevo(Boolean vevo) {
+		this.vevo = vevo;
+	}
+	
+	
 	
 	
 	

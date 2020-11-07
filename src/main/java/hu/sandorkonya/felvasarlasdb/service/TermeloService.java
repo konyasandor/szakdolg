@@ -28,10 +28,19 @@ public class TermeloService {
 		return termeloRepository.findByTermeloNev(search);
 	}
 	
-	public Optional<Termelo> edit(Long id){
+	public Termelo edit(Long id){
 		
-		return termeloRepository.findById(id);
+		Optional<Termelo> optionalTermelo = termeloRepository.findById(id);
+		
+		if(optionalTermelo.isPresent()) {
+			return optionalTermelo.get();
+		}else {
+			return null;
+		}
+		
 	}
+
+	
 	
 	
 }

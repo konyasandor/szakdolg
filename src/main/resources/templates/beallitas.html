@@ -10,31 +10,64 @@
 		
 		<h2>Paraméterek beállítása</h2>
 		
+		<h3>Növény vételi ára:</h3>
 		<div class="container">
-			<form name="ujbeallitas" th:action="@{/ujbeallitas}" th:object="${beallitas}"  method="POST">
+			<form name="ujbeallitasVetel" action="ujbeallitasVetel" method="POST">
 			  <div class="form-group">
 			    <label for="elsoOsztalyAr">I. osztály ára</label>
-			    <input type="text" class="form-control" id="elsoOsztalyAr" th:field="*{elsoOsztalyAr}" >
+			    <input type="text" class="form-control" id="elsoOsztalyAr" name="elsoOsztalyAr" >
 			  </div>
 			  <div class="form-group">
 			    <label for="masodOsztalyAr">II. osztály ára</label>
-			    <input type="text" class="form-control" id="masodOsztalyAr" th:field="*{masodOsztalyAr}">
+			    <input type="text" class="form-control" id="masodOsztalyAr" name="masodOsztalyAr">
 			  </div>
 			  <div class="form-group">
 			    <label for="harmadOsztalyAr">III. osztály ára</label>
-			    <input type="text" class="form-control" id="harmadOsztalyAr" th:field="*{harmadOsztalyAr}">
+			    <input type="text" class="form-control" id="harmadOsztalyAr" name="harmadOsztalyAr">
 			  </div>
 			  <div class="form-group">
 			    <label for="negyedOsztalyAr">IV. osztály ára</label>
-			    <input type="text" class="form-control" id="negyedOsztalyAr" th:field="*{negyedOsztalyAr}">
+			    <input type="text" class="form-control" id="negyedOsztalyAr" name="negyedOsztalyAr">
 			  </div>
 			  <div class="form-group">
 			    <label for="vastagGyokerAr">Vastag gyökér ára</label>
-			    <input type="text" class="form-control" id="vastagGyokerAr" th:field="*{vastagGyokerAr}">
+			    <input type="text" class="form-control" id="vastagGyokerAr" name="vastagGyokerAr" >
 			  </div>
 			  <div class="form-group">
 			    <label for="vekonyGyokerAr">Vékony gyökér ára</label>
-			    <input type="text" class="form-control" id="vekonyGyokerAr" th:field="*{vekonyGyokerAr}">
+			    <input type="text" class="form-control" id="vekonyGyokerAr" name="vekonyGyokerAr">
+			  </div>
+			  
+			  <button type="submit" class="btn btn-primary">Mentés</button>
+			</form>
+		</div>
+		
+		<h3>Növény eladási ára:</h3>
+		<div class="container">
+			<form name="ujbeallitasEladas" action="ujbeallitasEladas" method="POST">
+			  <div class="form-group">
+			    <label for="elsoOsztalyAr">I. osztály ára</label>
+			    <input type="text" class="form-control" id="elsoOsztalyAr" name="elsoOsztalyAr" >
+			  </div>
+			  <div class="form-group">
+			    <label for="masodOsztalyAr">II. osztály ára</label>
+			    <input type="text" class="form-control" id="masodOsztalyAr" name="masodOsztalyAr">
+			  </div>
+			  <div class="form-group">
+			    <label for="harmadOsztalyAr">III. osztály ára</label>
+			    <input type="text" class="form-control" id="harmadOsztalyAr" name="harmadOsztalyAr">
+			  </div>
+			  <div class="form-group">
+			    <label for="negyedOsztalyAr">IV. osztály ára</label>
+			    <input type="text" class="form-control" id="negyedOsztalyAr" name="negyedOsztalyAr">
+			  </div>
+			  <div class="form-group">
+			    <label for="vastagGyokerAr">Vastag gyökér ára</label>
+			    <input type="text" class="form-control" id="vastagGyokerAr" name="vastagGyokerAr" >
+			  </div>
+			  <div class="form-group">
+			    <label for="vekonyGyokerAr">Vékony gyökér ára</label>
+			    <input type="text" class="form-control" id="vekonyGyokerAr" name="vekonyGyokerAr">
 			  </div>
 			  
 			  <button type="submit" class="btn btn-primary">Mentés</button>

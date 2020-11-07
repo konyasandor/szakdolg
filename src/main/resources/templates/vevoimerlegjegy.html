@@ -8,7 +8,7 @@
 		
 	<div layout:fragment="content" >
 		
-		<h2>Termelő mérlegjegy készítése</h2>
+		<h2>Vevői mérlegjegy készítése</h2>
 		
 		<div class="container-fluid">
 			<table class="table">
@@ -45,10 +45,10 @@
 		
 		
 		<div class="container-fluid">
-			<form name="termelokeresmerleg" action=termelokeresmerleg  method="GET">
+			<form name="vevokeresmerleg" action=vevokeresmerleg  method="GET">
 				<div class="form-group">
-			    	<label for="termeloNevKeres">Név</label>
-			    	<input type="text" class="form-control" id="termeloNevKeres" name="termeloNevKeres">
+			    	<label for="vevoNevKeres">Név</label>
+			    	<input type="text" class="form-control" id="vevoNevKeres" name="vevoNevKeres">
 			  	</div>
 			  <button type="submit" class="btn btn-primary">Keresés</button>
 			</form>
@@ -72,7 +72,7 @@
 				      <td th:text="${termelo.termeloNev}">Mark</td>
 				      <td th:text="${termelo.termeloCim}">Otto</td>
 				      <td th:text="${termelo.termeloTelefonSzam}">sdf</td>
-				      <td><a th:href="@{/addtermelomerlegjegy(termelo=${termelo.id})}"> <i
+				      <td><a th:href="@{/addvevomerlegjegy(termelo=${termelo.id})}"> <i
 							class="material-icons">assignment_turned_in</i></a></td>
 				      
 				    </tr>

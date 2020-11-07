@@ -9,7 +9,67 @@
 		
 	<div layout:fragment="content">
 		
-		<h2>Kezdőoldal</h2>
+		<h2>Behozott növény súly összesem: </h2>
+		
+		<div class="container-fluid">
+			<table class="table">
+				<thead>
+				    <tr>
+				      <th scope="col">I. osztály</th>
+				      <th scope="col">II. osztály</th>
+				      <th scope="col">III. osztály</th>
+				      <th scope="col">IV osztály</th>
+				      <th scope="col">Vastag gyökér</th>
+				      <th scope="col">Vékony gyökér</th>
+				      
+				    </tr>
+				 </thead>
+				<tbody th:each="termelo : ${termelo}">
+				    <tr>
+				      <td th:text="${termelo[0]}">Mark</td>
+				      <td th:text="${termelo[1]}">Mark</td>
+				      <td th:text="${termelo[2]}">Otto</td>
+				      <td th:text="${termelo[3]}">sdf</td>
+				      <td th:text="${termelo[4]}">sdf</td>
+				      <td th:text="${termelo[5]}">sdf</td>
+				      
+				    </tr>
+				    
+			  	</tbody>
+			</table>
+		
+		</div>
+		<h2>Eladott növény súly összesem: </h2>
+		
+		<div class="container-fluid">
+			<table class="table">
+				<thead>
+				    <tr>
+				      <th scope="col">I. osztály</th>
+				      <th scope="col">II. osztály</th>
+				      <th scope="col">III. osztály</th>
+				      <th scope="col">IV osztály</th>
+				      <th scope="col">Vastag gyökér</th>
+				      <th scope="col">Vékony gyökér</th>
+				      
+				    </tr>
+				 </thead>
+				<tbody th:each="elado : ${elado}">
+				    <tr>
+				      <td th:text="${elado[0]}">Mark</td>
+				      <td th:text="${elado[1]}">Mark</td>
+				      <td th:text="${elado[2]}">Otto</td>
+				      <td th:text="${elado[3]}">sdf</td>
+				      <td th:text="${elado[4]}">sdf</td>
+				      <td th:text="${elado[5]}">sdf</td>
+				      
+				    </tr>
+				    
+			  	</tbody>
+			</table>
+		
+		</div>
+	
 
 	</div>
 

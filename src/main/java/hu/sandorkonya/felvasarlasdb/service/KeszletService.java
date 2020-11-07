@@ -1,5 +1,7 @@
 package hu.sandorkonya.felvasarlasdb.service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,4 +26,25 @@ public class KeszletService {
 		keszletRepository.save(keszlet);
 	}
 
+	public  List<Object[]> termeloAll() {
+		return keszletRepository.findAllSumTermelo();
+	}
+	
+	public List<Object[]> vevoAll() {
+		return keszletRepository.findAllSumVevo();
+	}
+	
+	public List<Object[]> ossz(){
+		List<Object[]> ossz = null;
+		List<Object[]> termelo  = keszletRepository.findAllSumTermelo();
+		List<Object[]> vevo = keszletRepository.findAllSumVevo();
+		
+		
+		termelo.get(0);
+		
+		
+		
+		return ossz;
+		
+	}
 }

@@ -9,66 +9,66 @@
 	<div layout:fragment="content">
 		
 		<div class="container">
-			<form name="ujtermelo" th:action="@{/ujtermelo}" th:object="${termelo}"  method="POST">
+			<form name="ujtermelo" action="ujtermelo"  method="POST">
 			  <div class="form-group">
 			    <label for="termeloNev">Név</label>
-			    <input type="text" class="form-control" id="termeloNev" th:field="*{termeloNev}">
+			    <input type="text" class="form-control" id="termeloNev" name="termeloNev">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloLnev">Leánykori név</label>
-			    <input type="text" class="form-control" id="termeloLnev" th:field="*{termeloLnev}">
+			    <input type="text" class="form-control" id="termeloLnev" name="termeloLnev">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloCim">Cím</label>
-			    <input type="text" class="form-control" id="termeloCim" th:field="*{termeloCim}">
+			    <input type="text" class="form-control" id="termeloCim" name="termeloCim">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloSzuletesiHely">Születési hely</label>
-			    <input type="text" class="form-control" id="termeloSzuletesiHely" th:field="*{termeloSzuletesiHely}">
+			    <input type="text" class="form-control" id="termeloSzuletesiHely" name="termeloSzuletesiHely">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloSzuletesiIdo">Születési idő</label>
-			    <input type="date" class="form-control" id="termeloSzuletesiIdo" min="1900-01-01" max="2020-01-01" th:field="*{termeloSzuletesiIdo}">
+			    <input type="date" class="form-control" id="termeloSzuletesiIdo" min="1900-01-01" max="2020-01-01" name="termeloSzuletesiIdo">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloEdesAnyjaNeve">Édesanyja Neve</label>
-			    <input type="text" class="form-control" id="termeloEdesAnyjaNeve" th:field="*{termeloEdesAnyjaNeve}">
+			    <input type="text" class="form-control" id="termeloEdesAnyjaNeve" name="termeloEdesAnyjaNeve">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloTelefonSzam">Telefonszám</label>
-			    <input type="text" class="form-control" id="termeloTelefonSzam" maxlength="30" th:field="*{termeloTelefonSzam}">
+			    <input type="text" class="form-control" id="termeloTelefonSzam" maxlength="30" name="termeloTelefonSzam">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloTajSzam">TAJ Szám</label>
-			    <input type="text" class="form-control" id="termeloTajSzam" maxlength="12" th:field="*{termeloTajSzam}">
+			    <input type="text" class="form-control" id="termeloTajSzam" maxlength="12" name="termeloTajSzam">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloOstermeloiIgazolvanySzam">Őstermelői igazolvány szám</label>
-			    <input type="text" class="form-control" id="termeloOstermeloiIgazolvanySzam" th:field="*{termeloOstermeloiIgazolvanySzam}">
+			    <input type="text" class="form-control" id="termeloOstermeloiIgazolvanySzam" name="termeloOstermeloiIgazolvanySzam">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloOstermeloiIgazolvanyErvenyesseg">Őstermelő Igazolvány érvényesség</label>
-			    <input type="date" class="form-control" id="termeloOstermeloiIgazolvanyErvenyesseg" min="1990-01-01" max="2025-01-01" th:field="*{termeloOstermeloiIgazolvanyErvenyesseg}">
+			    <input type="date" class="form-control" id="termeloOstermeloiIgazolvanyErvenyesseg" min="1990-01-01" max="2025-01-01" name="termeloOstermeloiIgazolvanyErvenyesseg">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloAdoazonositoJel">Adóazonosító jel</label>
-			    <input type="text" class="form-control" id="termeloAdoazonositoJel" th:field="*{termeloAdoazonositoJel}">
+			    <input type="text" class="form-control" id="termeloAdoazonositoJel" name="termeloAdoazonositoJel">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloAdoSzam">Adószám</label>
-			    <input type="text" class="form-control" id="termeloAdoSzam" th:field="*{termeloAdoSzam}">
+			    <input type="text" class="form-control" id="termeloAdoSzam" name="termeloAdoSzam">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloCsaladiGazdasagSzam">Családi gazdaság szám</label>
-			    <input type="text" class="form-control" id="termeloCsaladiGazdasagSzam" th:field="*{termeloCsaladiGazdasagSzam}">
+			    <input type="text" class="form-control" id="termeloCsaladiGazdasagSzam" name="termeloCsaladiGazdasagSzam">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloGlobalGapSzam">Global Gap szám</label>
-			    <input type="text" class="form-control" id="termeloGlobalGapSzam" th:field="*{termeloGlobalGapSzam}">
+			    <input type="text" class="form-control" id="termeloGlobalGapSzam" name="termeloGlobalGapSzam">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloBankszamlaSzam">Bankszámlaszám</label>
-			    <input type="text" class="form-control" id="termeloBankszamlaSzam" th:field="*{termeloBankszamlaSzam}">
+			    <input type="text" class="form-control" id="termeloBankszamlaSzam" name="termeloBankszamlaSzam">
 			  </div>
 			  <button type="submit" class="btn btn-primary">Mentés</button>
 			</form>
