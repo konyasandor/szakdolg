@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import hu.sandorkonya.felvasarlasdb.model.Beallitas;
-import hu.sandorkonya.felvasarlasdb.model.Termelo;
 import hu.sandorkonya.felvasarlasdb.repository.BeallitasRepository;
 
 @Service

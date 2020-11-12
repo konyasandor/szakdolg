@@ -9,11 +9,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Felvásárlás</title>
 	
-	<link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+	<link rel="stylesheet" href="../../css/style.css" th:href="@{/css/style.css}"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 		
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      
+    <link rel="shortcut icon" href="../../image/favicon-16x16.png" th:href="@{/image/favicon-16x16.png}">
 	
 	<!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -28,11 +30,11 @@
 		    <div class="container-fluid">
 		       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				    <ul class="nav navbar-nav">
-				        <li class=""><a href="/fooldal">Kezdőoldal</a></li>
+				        <li class=""><a href="/">Kezdőoldal</a></li>
 				        <li class=""><a href="/termelomerlegjegy">Termelő mérlegjegy</a></li>
 				        <li class=""><a href="/vevoimerlegjegy">Vevő mérlegjegy</a></li>
 				        <li class=""><a href="/felvasarlasijegy">Felvásárlási jegy készítés</a></li>
-				        <li class=""><a href="/szamla">Számla készítés</a></li>
+				        <li class=""><a href="/egyedilekérdezések">Számla készítés</a></li>
 				        <li class=""><a href="/ugyfelszerkesztes">Ügyfelek szerkesztése</a></li>
 				        <li class=""><a href="/beallitas">Beállítás</a></li>
 				    </ul>
@@ -51,6 +53,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
-	<script src="../static/js/main.js" th:href="@{/js/main.js}"></script>
+	<script th:src="@{/js/main.js}" src="../../js/main.js"></script>
 </body>
 </html>

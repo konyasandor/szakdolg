@@ -15,12 +15,12 @@
 			  <thead>
 			    <tr>
 			      <th scope="col">#</th>
-			      <th scope="col">I. osztály ár</th>
-			      <th scope="col">II. osztály ár</th>
-			      <th scope="col">II. osztály ár</th>
-			      <th scope="col">IV. osztály ár</th>
-			      <th scope="col">Vastag gyökér ár</th>
-			      <th scope="col">Vékony gyökér ár</th>
+			      <th scope="col">I. osztály ár (FT)</th>
+			      <th scope="col">II. osztály ár (FT)</th>
+			      <th scope="col">III. osztály ár (FT)</th>
+			      <th scope="col">IV. osztály ár (FT)</th>
+			      <th scope="col">Vastag gyökér ár (FT)</th>
+			      <th scope="col">Vékony gyökér ár (FT)</th>
 			    </tr>
 			  </thead>
 			  <tbody th:each="beallitas : ${beallitas}">
@@ -44,16 +44,31 @@
 		<br>
 
 		<div class="container-fluid">
+		<span id="errmsg" color="red"></span>
 			<form action="" class="  ">
-				<div class=" row ">
+				<div class="row ">
 					<div class="col-sm-3">
-						<label>I. osztály mérés</label>
+						<label></label>
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="elsoMeresegy" class="form-control">
+						<label>Első mérés</label>
+					</div>
+					<div class="col-sm-4">
+						<label>Második mérés</label>
+					</div>
+					<div class="col-sm-3">
+						<label>Bruttó súly (kg)</label>
+					</div>
+				</div>
+				<div class=" row ">
+					<div class="col-sm-3 mb-2 pb-2">
+						<label>I. osztály mérés (kg)</label>
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="elsoMeresKetto" class="form-control">
+						<input type="text" id="elsoMeresegy" class="form-control numberFormat">
+					</div>
+					<div class="col-sm-2">
+						<input type="text" id="elsoMeresKetto" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
 						<button type="button" class="btn btn-secondary border" id="szamolElso">Számol</button>
@@ -64,87 +79,87 @@
 				</div>
 				<div class=" row">
 					<div class="col-sm-3">
-						<label>II. osztály mérés</label>
+						<label>II. osztály mérés (kg)</label>
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="masodMeresegy" class="form-control">
+						<input type="text" id="masodMeresegy" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="masodMeresKetto" class="form-control">
+						<input type="text" id="masodMeresKetto" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
 						<button type="button" class="btn btn-secondary rounded" id="szamolMasod">Számol</button>
 					</div>
 					<div class="col-sm-3">
-						<label id="eredményMasod"></label>
+						<label id="eredményMasod">0</label>
 					</div>
 				</div>
 				<div class=" row">
 					<div class="col-sm-3">
-						<label>III. osztály mérés</label>
+						<label>III. osztály mérés (kg)</label>
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="harmadMeresegy" class="form-control">
+						<input type="text" id="harmadMeresegy" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="harmadMeresKetto" class="form-control">
+						<input type="text" id="harmadMeresKetto" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
 						<button type="button" class="btn btn-secondary border" id="szamolHarmad">Számol</button>
 					</div>
 					<div class="col-sm-3">
-						<label id="eredményHarmad"></label>
+						<label id="eredményHarmad">0</label>
 					</div>
 				</div>
 				<div class=" row">
 					<div class="col-sm-3">
-						<label>IV. osztály mérés</label>
+						<label>IV. osztály mérés (kg)</label>
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="negyedMeresegy" class="form-control">
+						<input type="text" id="negyedMeresegy" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="negyedMeresKetto" class="form-control">
+						<input type="text" id="negyedMeresKetto" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
 						<button type="button" class="btn btn-secondary border" id="szamolNegyed">Számol</button>
 					</div>
 					<div class="col-sm-3">
-						<label id="eredményNegyed"></label>
+						<label id="eredményNegyed">0</label>
 					</div>
 				</div>
 				<div class=" row">
 					<div class="col-sm-3">
-						<label>Vastag gyökér mérés</label>
+						<label>Vastag gyökér mérés (kg)</label>
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="vastagMeresegy" class="form-control">
+						<input type="text" id="vastagMeresegy" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="vastagMeresKetto" class="form-control">
+						<input type="text" id="vastagMeresKetto" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
 						<button type="button" class="btn btn-secondary border" id="szamolVastag">Számol</button>
 					</div>
 					<div class="col-sm-3">
-						<label id="eredményVastag"></label>
+						<label id="eredményVastag">0</label>
 					</div>
 				</div>
 				<div class=" row">
 					<div class="col-sm-3">
-						<label>Vékony gyökér mérés</label>
+						<label>Vékony gyökér mérés (kg)</label>
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="vékonyMeresegy" class="form-control">
+						<input type="text" id="vékonyMeresegy" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="vékonyMeresKetto" class="form-control">
+						<input type="text" id="vékonyMeresKetto" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
 						<button type="button" class="btn btn-secondary border" id="szamolVekony">Számol</button>
 					</div>
 					<div class="col-sm-3">
-						<label id="eredményVekony"></label>
+						<label id="eredményVekony">0</label>
 					</div>
 				</div>
 			</form>
@@ -170,32 +185,32 @@
 			  </div>
 			  
 			  <div class="form-group">
-			    <label for="elsoOsztalySuly">I. osztály nettó súly</label>
-			    <input type="text" class="form-control" id="elsoOsztalySuly" name="elsoOsztalySuly">
+			    <label for="elsoOsztalySuly">I. osztály nettó súly (kg)</label>
+			    <input type="text" class="form-control numberFormat" id="elsoOsztalySuly" name="elsoOsztalySuly">
 			  </div>
 			  <div class="form-group">
-			    <label for="masodOsztalySuly">II. osztály nettó súly</label>
-			    <input type="text" class="form-control" id="masodOsztalySuly" name="masodOsztalySuly">
+			    <label for="masodOsztalySuly">II. osztály nettó súly  (kg)</label>
+			    <input type="text" class="form-control numberFormat" id="masodOsztalySuly" name="masodOsztalySuly">
 			  </div>
 			  <div class="form-group">
-			    <label for="harmadOsztalySuly">III. osztály nettó súly</label>
-			    <input type="text" class="form-control" id="harmadOsztalySuly" name="harmadOsztalySuly">
+			    <label for="harmadOsztalySuly">III. osztály nettó súly  (kg)</label>
+			    <input type="text" class="form-control numberFormat" id="harmadOsztalySuly" name="harmadOsztalySuly">
 			  </div>
 			  <div class="form-group">
-			    <label for="negyedOsztalySuly">IV. osztály nettó súly</label>
-			    <input type="text" class="form-control" id="negyedOsztalySuly" name="negyedOsztalySuly">
+			    <label for="negyedOsztalySuly">IV. osztály nettó súly (kg)</label>
+			    <input type="text" class="form-control numberFormat" id="negyedOsztalySuly" name="negyedOsztalySuly">
 			  </div>
 			  <div class="form-group">
-			    <label for="vastagGyokerSuly">Vastag gyökér nettó súly</label>
-			    <input type="text" class="form-control" id="vastagGyokerSuly" name="vastagGyokerSuly">
+			    <label for="vastagGyokerSuly">Vastag gyökér nettó súly  (kg)</label>
+			    <input type="text" class="form-control numberFormat" id="vastagGyokerSuly" name="vastagGyokerSuly">
 			  </div>
 			  <div class="form-group">
-			    <label for="vekonyGyokerSuly">Vékony gyökér nettó súly</label>
-			    <input type="text" class="form-control" id="vekonyGyokerSuly" name="vekonyGyokerSuly">
+			    <label for="vekonyGyokerSuly">Vékony gyökér nettó súly (kg)</label>
+			    <input type="text" class="form-control numberFormat" id="vekonyGyokerSuly" name="vekonyGyokerSuly">
 			  </div>
 			  <div class="form-group">
 			    <label for="osszAr">Leadás összértéke</label>
-			    <input type="text" class="form-control" id="osszAr"  name="osszAr">
+			    <input type="text" class="form-control numberFormat" id="osszAr"  name="osszAr">
 			  </div>
 			  
 			  <button type="submit" class="btn btn-primary">Mentés</button>
@@ -211,7 +226,12 @@
 		
 		</div>
 		
+		<script type="text/javascript">
 		
+		document.getElementById("szamolElso").onclick = function(){
+			console.log("Hello");
+		};
+		</script>
 
 	
 

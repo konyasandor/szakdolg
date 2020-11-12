@@ -15,12 +15,12 @@
 			  <thead>
 			    <tr>
 			      <th scope="col">#</th>
-			      <th scope="col">I. osztály ár</th>
-			      <th scope="col">II. osztály ár</th>
-			      <th scope="col">II. osztály ár</th>
-			      <th scope="col">IV. osztály ár</th>
-			      <th scope="col">Vastag gyökér ár</th>
-			      <th scope="col">Vékony gyökér ár</th>
+			      <th scope="col">I. osztály ár (FT)</th>
+			      <th scope="col">II. osztály ár (FT)</th>
+			      <th scope="col">III. osztály ár (FT)</th>
+			      <th scope="col">IV. osztály ár (FT)</th>
+			      <th scope="col">Vastag gyökér ár (FT)</th>
+			      <th scope="col">Vékony gyökér ár (FT)</th>
 			    </tr>
 			  </thead>
 			  <tbody th:each="beallitas : ${beallitas}">
@@ -91,16 +91,30 @@
 			<form action="" class="form-group  ">
 				<div class="form-group row ">
 					<div class="col-sm-3">
+						<label></label>
+					</div>
+					<div class="col-sm-3">
+						<label>Első mérés</label>
+					</div>
+					<div class="col-sm-3">
+						<label>Második mérés</label>
+					</div>
+					<div class="col-sm-3">
+						<label>Bruttó súly (kg)</label>
+					</div>
+				</div>
+				<div class="form-group row ">
+					<div class="col-sm-3">
 						<label>I. osztály mérés</label>
 					</div>
 					<div class="col-sm-3">
-						<input type="text" id="elsoMeresegy" class="form-control">
+						<input type="text" id="elsoMeresegy" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-3">
-						<input type="text" id="elsoMeresKetto" class="form-control">
+						<input type="text" id="elsoMeresKetto" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-3">
-						<label id="eredmény"></label>
+						<label id="eredmény">0</label>
 					</div>
 				</div>
 				<div class="form-group row">
@@ -108,13 +122,13 @@
 						<label>II. osztály mérés</label>
 					</div>
 					<div class="col-sm-3">
-						<input type="text" id="masodMeresegy" class="form-control">
+						<input type="text" id="masodMeresegy" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-3">
-						<input type="text" id="masodMeresKetto" class="form-control">
+						<input type="text" id="masodMeresKetto" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-3">
-						<label id="eredmény"></label>
+						<label id="eredmény">0</label>
 					</div>
 				</div>
 				<div class="form-group row">
@@ -122,13 +136,13 @@
 						<label>III. osztály mérés</label>
 					</div>
 					<div class="col-sm-3">
-						<input type="text" id="harmadMeresegy" class="form-control">
+						<input type="text" id="harmadMeresegy" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-3">
-						<input type="text" id="harmadMeresKetto" class="form-control">
+						<input type="text" id="harmadMeresKetto" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-3">
-						<label id="eredmény"></label>
+						<label id="eredmény">0</label>
 					</div>
 				</div>
 				<div class="form-group row">
@@ -136,13 +150,13 @@
 						<label>IV. osztály mérés</label>
 					</div>
 					<div class="col-sm-3">
-						<input type="text" id="negyedMeresegy" class="form-control">
+						<input type="text" id="negyedMeresegy" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-3">
-						<input type="text" id="negyedMeresKetto" class="form-control">
+						<input type="text" id="negyedMeresKetto" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-3">
-						<label id="eredmény"></label>
+						<label id="eredmény">0</label>
 					</div>
 				</div>
 				<div class="form-group row">
@@ -150,13 +164,13 @@
 						<label>Vastag gyökér mérés</label>
 					</div>
 					<div class="col-sm-3">
-						<input type="text" id="vastagMeresegy" class="form-control">
+						<input type="text" id="vastagMeresegy" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-3">
-						<input type="text" id="vastagMeresKetto" class="form-control">
+						<input type="text" id="vastagMeresKetto" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-3">
-						<label id="eredmény"></label>
+						<label id="eredmény">0</label>
 					</div>
 				</div>
 				<div class="form-group row">
@@ -164,13 +178,13 @@
 						<label>Vékony gyökér mérés</label>
 					</div>
 					<div class="col-sm-3">
-						<input type="text" id="vékonyMeresegy" class="form-control">
+						<input type="text" id="vékonyMeresegy" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-3">
-						<input type="text" id="vékonyMeresKetto" class="form-control">
+						<input type="text" id="vékonyMeresKetto" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-3">
-						<label id="eredmény"></label>
+						<label id="eredmény">0</label>
 					</div>
 				</div>
 			</form>

@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,21 +19,21 @@ public class Keszlet {
 	
 	private Long tId;
 	private String tNev;
-	private Integer elsoOsztalySuly;
-	private Integer masodOsztalySuly;
-	private Integer harmadOsztalySuly;
-	private Integer negyedOsztalySuly;
-	private Integer vastagGyokerSuly;
-	private Integer vekonyGyokerSuly;
-	private Integer osszAr;
+	private Double elsoOsztalySuly;
+	private Double masodOsztalySuly;
+	private Double harmadOsztalySuly;
+	private Double negyedOsztalySuly;
+	private Double vastagGyokerSuly;
+	private Double vekonyGyokerSuly;
+	private Double osszAr;
 	private Boolean vevo;
 	
 	public Keszlet() {
 		super();
 	}
 
-	public Keszlet(Long id, Long tId, String tNev, Integer elsoOsztalySuly, Integer masodOsztalySuly, Integer harmadOsztalySuly,
-			Integer negyedOsztalySuly, Integer vastagGyokerSuly, Integer vekonyGyokerSuly, Integer osszAr,Boolean vevo) {
+	public Keszlet(Long id, Long tId, String tNev, Double elsoOsztalySuly, Double masodOsztalySuly, Double harmadOsztalySuly,
+			Double negyedOsztalySuly, Double vastagGyokerSuly, Double vekonyGyokerSuly, Double osszAr,Boolean vevo) {
 		super();
 		this.id = id;
 		this.tId = tId;
@@ -71,59 +70,59 @@ public class Keszlet {
 		this.tNev = tNev;
 	}
 
-	public Integer getElsoOsztalySuly() {
+	public Double getElsoOsztalySuly() {
 		return elsoOsztalySuly;
 	}
 
-	public void setElsoOsztalySuly(Integer elsoOsztalySuly) {
+	public void setElsoOsztalySuly(Double elsoOsztalySuly) {
 		this.elsoOsztalySuly = elsoOsztalySuly;
 	}
 
-	public Integer getMasodOsztalySuly() {
+	public Double getMasodOsztalySuly() {
 		return masodOsztalySuly;
 	}
 
-	public void setMasodOsztalySuly(Integer masodOsztalySuly) {
+	public void setMasodOsztalySuly(Double masodOsztalySuly) {
 		this.masodOsztalySuly = masodOsztalySuly;
 	}
 
-	public Integer getHarmadOsztalySuly() {
+	public Double getHarmadOsztalySuly() {
 		return harmadOsztalySuly;
 	}
 
-	public void setHarmadOsztalySuly(Integer harmadOsztalySuly) {
+	public void setHarmadOsztalySuly(Double harmadOsztalySuly) {
 		this.harmadOsztalySuly = harmadOsztalySuly;
 	}
 
-	public Integer getNegyedOsztalySuly() {
+	public Double getNegyedOsztalySuly() {
 		return negyedOsztalySuly;
 	}
 
-	public void setNegyedOsztalySuly(Integer negyedOsztalySuly) {
+	public void setNegyedOsztalySuly(Double negyedOsztalySuly) {
 		this.negyedOsztalySuly = negyedOsztalySuly;
 	}
 
-	public Integer getVastagGyokerSuly() {
+	public Double getVastagGyokerSuly() {
 		return vastagGyokerSuly;
 	}
 
-	public void setVastagGyokerSuly(Integer vastagGyokerSuly) {
+	public void setVastagGyokerSuly(Double vastagGyokerSuly) {
 		this.vastagGyokerSuly = vastagGyokerSuly;
 	}
 
-	public Integer getVekonyGyokerSuly() {
+	public Double getVekonyGyokerSuly() {
 		return vekonyGyokerSuly;
 	}
 
-	public void setVekonyGyokerSuly(Integer vekonyGyokerSuly) {
+	public void setVekonyGyokerSuly(Double vekonyGyokerSuly) {
 		this.vekonyGyokerSuly = vekonyGyokerSuly;
 	}
 
-	public Integer getOsszAr() {
+	public Double getOsszAr() {
 		return osszAr;
 	}
 
-	public void setOsszAr(Integer osszAr) {
+	public void setOsszAr(Double osszAr) {
 		this.osszAr = osszAr;
 	}
 

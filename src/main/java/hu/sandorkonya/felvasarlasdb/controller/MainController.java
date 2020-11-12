@@ -44,11 +44,32 @@ public class MainController {
 	@GetMapping("/")
 	public String home(Model model){
 		
-		model.addAttribute("termelo", keszletService.termeloAll());
-		model.addAttribute("elado", keszletService.vevoAll());
+		model.addAttribute("elsoOsztSulyTermelo", keszletService.elsoOsztalySulyTermelo());
+		model.addAttribute("masodOsztSulyTermelo", keszletService.masodOsztalySulyTermelo());
+		model.addAttribute("harmadOsztSulyTermelo", keszletService.harmadOsztalySulyTermelo());
+		model.addAttribute("negyedOsztSulyTermelo", keszletService.negyeddOsztalySulyTermelo());
+		model.addAttribute("vastagGyokerSulyTermelo", keszletService.vastagGyokerSulyTermelo());
+		model.addAttribute("vekonyGyokerSulyTermelo", keszletService.vekonyGyokerSulyTermelo());
+		model.addAttribute("osszArTermelo", keszletService.osszArTermelo());
+		
+		model.addAttribute("elsoOsztSulyVevo", keszletService.elsoOsztalySulyVevo());
+		model.addAttribute("masodOsztSulyVevo", keszletService.masodOsztalySulyVevo());
+		model.addAttribute("harmadOsztSulyVevo", keszletService.harmadOsztalySulyVevo());
+		model.addAttribute("negyedOsztSulyVevo", keszletService.negyeddOsztalySulyVevo());
+		model.addAttribute("vastagGyokerSulyVevo", keszletService.vastagGyokerSulyVevo());
+		model.addAttribute("vekonyGyokerSulyVevo", keszletService.vekonyGyokerSulyVevo());
+		model.addAttribute("osszArVevo", keszletService.osszArVevo());
+		
+		model.addAttribute("elsoOsztSulyTelep", keszletService.elsoOsztalySulyTelep());
+		model.addAttribute("masodOsztSulyTelep", keszletService.masodOsztalySulyTelep());
+		model.addAttribute("harmadOsztSulyTelep", keszletService.harmadOsztalySulyTelep());
+		model.addAttribute("negyedOsztSulyTelep", keszletService.negyedOsztalySulyTelep());
+		model.addAttribute("vastagGyokerSulyTelep", keszletService.vastagGyokerSulyTelep());
+		model.addAttribute("vekonyGyokerSulyTelep", keszletService.vekonyGyokerSulyTelep());
 		
 		return "index";
 	}
+	
 	
 	
 	
@@ -93,13 +114,13 @@ public class MainController {
 	@PostMapping("/ujmerlegjegyment")
 	public String postIndexMerlegjegy(@RequestParam Long tId,
 										@RequestParam String tNev,
-										@RequestParam Integer elsoOsztalySuly,
-										@RequestParam Integer masodOsztalySuly,
-										@RequestParam Integer harmadOsztalySuly,
-										@RequestParam Integer negyedOsztalySuly,
-										@RequestParam Integer vastagGyokerSuly,
-										@RequestParam Integer vekonyGyokerSuly,
-										@RequestParam Integer osszAr
+										@RequestParam Double elsoOsztalySuly,
+										@RequestParam Double masodOsztalySuly,
+										@RequestParam Double harmadOsztalySuly,
+										@RequestParam Double negyedOsztalySuly,
+										@RequestParam Double vastagGyokerSuly,
+										@RequestParam Double vekonyGyokerSuly,
+										@RequestParam Double osszAr
 							) {
 		
 		Keszlet ujKeszlet = new Keszlet();
@@ -161,13 +182,13 @@ public class MainController {
 	public String postIndexMerlegjegyEladas(Model model,
 			@RequestParam Long tId,
 			@RequestParam String tNev,
-			@RequestParam Integer elsoOsztalySuly,
-			@RequestParam Integer masodOsztalySuly,
-			@RequestParam Integer harmadOsztalySuly,
-			@RequestParam Integer negyedOsztalySuly,
-			@RequestParam Integer vastagGyokerSuly,
-			@RequestParam Integer vekonyGyokerSuly,
-			@RequestParam Integer osszAr) {
+			@RequestParam Double elsoOsztalySuly,
+			@RequestParam Double masodOsztalySuly,
+			@RequestParam Double harmadOsztalySuly,
+			@RequestParam Double negyedOsztalySuly,
+			@RequestParam Double vastagGyokerSuly,
+			@RequestParam Double vekonyGyokerSuly,
+			@RequestParam Double osszAr) {
 		
 		model.addAttribute("beallitas", beallitasService.findEladas());
 		Keszlet ujKeszlet = new Keszlet();
