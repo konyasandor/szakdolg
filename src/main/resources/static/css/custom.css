@@ -1,0 +1,15 @@
+body{
+	background-color:#004C70 !important;
+}
+
+/****************************merlegjegy lista table************************/
+
+td.details-control {
+    background: url('../image/down-arrow.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('../image/up-arrow.png') no-repeat center center;
+}
+
+
