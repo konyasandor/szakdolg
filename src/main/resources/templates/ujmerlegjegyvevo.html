@@ -65,10 +65,10 @@
 						<label>I. osztály mérés</label>
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="elsoMeresegy" class="form-control numberFormat">
+						<input type="text" id="elsoMeresegy" maxlength="10" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="elsoMeresKetto" class="form-control  numberFormat">
+						<input type="text" id="elsoMeresKetto" maxlength="10" class="form-control  numberFormat">
 					</div>
 					<div class="col-sm-2">
 						<button type="button" class="btn btn-secondary border" id="szamolElso">Számol</button>
@@ -82,10 +82,10 @@
 						<label>II. osztály mérés</label>
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="masodMeresegy" class="form-control numberFormat">
+						<input type="text" id="masodMeresegy" maxlength="10" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="masodMeresKetto" class="form-control numberFormat">
+						<input type="text" id="masodMeresKetto" maxlength="10" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
 						<button type="button" class="btn btn-secondary rounded" id="szamolMasod">Számol</button>
@@ -99,10 +99,10 @@
 						<label>III. osztály mérés</label>
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="harmadMeresegy" class="form-control numberFormat">
+						<input type="text" id="harmadMeresegy" maxlength="10" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="harmadMeresKetto" class="form-control numberFormat">
+						<input type="text" id="harmadMeresKetto" maxlength="10" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
 						<button type="button" class="btn btn-secondary border" id="szamolHarmad">Számol</button>
@@ -116,10 +116,10 @@
 						<label>IV. osztály mérés</label>
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="negyedMeresegy" class="form-control numberFormat">
+						<input type="text" id="negyedMeresegy" maxlength="10" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="negyedMeresKetto" class="form-control numberFormat">
+						<input type="text" id="negyedMeresKetto" maxlength="10" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
 						<button type="button" class="btn btn-secondary border" id="szamolNegyed">Számol</button>
@@ -133,10 +133,10 @@
 						<label>Vastag gyökér mérés</label>
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="vastagMeresegy" class="form-control numberFormat">
+						<input type="text" id="vastagMeresegy" maxlength="10" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
-						<input type="text" id="vastagMeresKetto" class="form-control numberFormat">
+						<input type="text" id="vastagMeresKetto" maxlength="10" class="form-control numberFormat">
 					</div>
 					<div class="col-sm-2">
 						<button type="button" class="btn btn-secondary border" id="szamolVastag">Számol</button>
@@ -177,40 +177,40 @@
 			  
 			  <div class="form-group">
 			    <label for="tId">Termelő ID</label>
-			    <input type="text" class="form-control" id="tId" th:value="${termelok.id}" name="tId" readonly="readonly">
+			    <input type="text" class="form-control" id="tId" th:value="${termelok.id}" maxlength="10" name="tId" readonly="readonly">
 			  </div>
 			  <div class="form-group">
 			    <label for="tNev">Termelő Név</label>
-			    <input type="text" class="form-control" id="tNev" th:value="${termelok.termeloNev}" name="tNev" readonly="readonly">
+			    <input type="text" class="form-control" id="tNev" th:value="${termelok.termeloNev}" maxlength="10" name="tNev" readonly="readonly">
 			  </div>
 			  
 			  <div class="form-group">
 			    <label for="elsoOsztalySuly">I. osztály nettó súly (kg)</label>
-			    <input type="text" class="form-control numberFormat" id="elsoOsztalySuly" name="elsoOsztalySuly">
+			    <input type="text" class="form-control numberFormat" id="elsoOsztalySuly" maxlength="10" name="elsoOsztalySuly">
 			  </div>
 			  <div class="form-group">
 			    <label for="masodOsztalySuly">II. osztály nettó súly (kg)</label>
-			    <input type="text" class="form-control numberFormat" id="masodOsztalySuly" name="masodOsztalySuly">
+			    <input type="text" class="form-control numberFormat" id="masodOsztalySuly" maxlength="10" name="masodOsztalySuly">
 			  </div>
 			  <div class="form-group">
 			    <label for="harmadOsztalySuly">III. osztály nettó súly (kg)</label>
-			    <input type="text" class="form-control numberFormat" id="harmadOsztalySuly" name="harmadOsztalySuly">
+			    <input type="text" class="form-control numberFormat" id="harmadOsztalySuly" maxlength="10" name="harmadOsztalySuly">
 			  </div>
 			  <div class="form-group">
 			    <label for="negyedOsztalySuly">IV. osztály nettó súly (kg)</label>
-			    <input type="text" class="form-control numberFormat" id="negyedOsztalySuly" name="negyedOsztalySuly">
+			    <input type="text" class="form-control numberFormat" id="negyedOsztalySuly" maxlength="10" name="negyedOsztalySuly">
 			  </div>
 			  <div class="form-group">
 			    <label for="vastagGyokerSuly">Vastag gyökér nettó súly (kg)</label>
-			    <input type="text" class="form-control numberFormat" id="vastagGyokerSuly" name="vastagGyokerSuly">
+			    <input type="text" class="form-control numberFormat" id="vastagGyokerSuly" maxlength="10" name="vastagGyokerSuly">
 			  </div>
 			  <div class="form-group">
 			    <label for="vekonyGyokerSuly">Vékony gyökér nettó súly (kg)</label>
-			    <input type="text" class="form-control numberFormat" id="vekonyGyokerSuly" name="vekonyGyokerSuly">
+			    <input type="text" class="form-control numberFormat" id="vekonyGyokerSuly" maxlength="10" name="vekonyGyokerSuly">
 			  </div>
 			  <div class="form-group">
 			    <label for="osszAr">Leadás összértéke</label>
-			    <input type="text" class="form-control numberFormat" id="osszAr"  name="osszAr">
+			    <input type="text" class="form-control numberFormat" id="osszAr" maxlength="15"  name="osszAr">
 			  </div>
 			  
 			  <button type="submit" class="btn btn-primary">Mentés</button>

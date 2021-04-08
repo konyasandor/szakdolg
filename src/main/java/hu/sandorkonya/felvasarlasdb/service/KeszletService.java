@@ -1,15 +1,23 @@
 package hu.sandorkonya.felvasarlasdb.service;
 
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import hu.sandorkonya.felvasarlasdb.model.Chart;
 import hu.sandorkonya.felvasarlasdb.model.Keszlet;
 import hu.sandorkonya.felvasarlasdb.repository.KeszletRepository;
 
 @Service
 public class KeszletService {
+	
+	
 	
 	@Autowired
 	private KeszletRepository keszletRepository;
@@ -250,5 +258,63 @@ public class KeszletService {
 	public Double vekonyGyokerSulyTelep() {
 		
 		return vekonyGyokerSulyTermelo()-vekonyGyokerSulyVevo();
+	}
+	
+	public List<Chart> napiOszzSuly(){
+		
+		List<Chart> osszLista = new ArrayList<>();
+		
+		List<LocalDate> datumok = new ArrayList<>();
+		
+		List<Keszlet> all = keszletRepository.findAll();
+		
+		for (Keszlet item : all) {
+			if(!datumok.contains(item.getLeadasDatum())) {
+				datumok.add(item.getLeadasDatum());
+			}
+		}
+		
+		for (int i = 0; i < datumok.size(); i++) {
+			Double elsoOszt = 0.0;
+			Double masodOszt = 0.0;
+			Double harmadOszt = 0.0;
+			Double negyedOszt = 0.0;
+			Double vastagOszt = 0.0;
+			Double vekonyOszt = 0.0;
+			
+			Chart minta = new Chart();
+			
+			minta.setDatum(datumok.get(i));
+			
+				for (Keszlet item : all) {
+					if(datumok.get(i).equals(item.getLeadasDatum()) && !item.getVevo()) {
+						elsoOszt += item.getElsoOsztalySuly();
+						masodOszt += item.getMasodOsztalySuly();
+						harmadOszt += item.getHarmadOsztalySuly();
+						negyedOszt += item.getNegyedOsztalySuly();
+						vastagOszt += item.getVastagGyokerSuly();
+						vekonyOszt += item.getVekonyGyokerSuly();
+					}
+					
+				}
+				
+			minta.setNapiElsoOsszSuly(elsoOszt);
+			minta.setNapiMasodOsszSuly(masodOszt);
+			minta.setNapiHarmadOsszSuly(harmadOszt);
+			minta.setNapiNegyedOsszSuly(negyedOszt);
+			minta.setNapiVastagOsszSuly(vastagOszt);
+			minta.setNapiVekonyOsszSuly(vekonyOszt);
+			
+			osszLista.add(minta);
+			
+		}
+		
+		
+		
+		
+		
+		return osszLista;
+		
+		
 	}
 }

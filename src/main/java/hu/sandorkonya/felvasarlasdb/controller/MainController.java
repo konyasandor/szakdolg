@@ -2,6 +2,8 @@ package hu.sandorkonya.felvasarlasdb.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -10,11 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import hu.sandorkonya.felvasarlasdb.model.Beallitas;
+import hu.sandorkonya.felvasarlasdb.model.Chart;
 import hu.sandorkonya.felvasarlasdb.model.Keszlet;
 import hu.sandorkonya.felvasarlasdb.model.Termelo;
 import hu.sandorkonya.felvasarlasdb.service.BeallitasService;
@@ -44,32 +47,54 @@ public class MainController {
 	@GetMapping("/")
 	public String home(Model model){
 		
-		model.addAttribute("elsoOsztSulyTermelo", keszletService.elsoOsztalySulyTermelo());
-		model.addAttribute("masodOsztSulyTermelo", keszletService.masodOsztalySulyTermelo());
-		model.addAttribute("harmadOsztSulyTermelo", keszletService.harmadOsztalySulyTermelo());
-		model.addAttribute("negyedOsztSulyTermelo", keszletService.negyeddOsztalySulyTermelo());
-		model.addAttribute("vastagGyokerSulyTermelo", keszletService.vastagGyokerSulyTermelo());
-		model.addAttribute("vekonyGyokerSulyTermelo", keszletService.vekonyGyokerSulyTermelo());
-		model.addAttribute("osszArTermelo", keszletService.osszArTermelo());
+		model.addAttribute("elsoOsztSulyTermelo", String.format("%,.0f", keszletService.elsoOsztalySulyTermelo()));
+		model.addAttribute("masodOsztSulyTermelo", String.format("%,.0f",keszletService.masodOsztalySulyTermelo()));
+		model.addAttribute("harmadOsztSulyTermelo", String.format("%,.0f",keszletService.harmadOsztalySulyTermelo()));
+		model.addAttribute("negyedOsztSulyTermelo", String.format("%,.0f",keszletService.negyeddOsztalySulyTermelo()));
+		model.addAttribute("vastagGyokerSulyTermelo", String.format("%,.0f",keszletService.vastagGyokerSulyTermelo()));
+		model.addAttribute("vekonyGyokerSulyTermelo", String.format("%,.0f",keszletService.vekonyGyokerSulyTermelo()));
+		model.addAttribute("osszArTermelo", String.format("%,.0f",keszletService.osszArTermelo()));
 		
-		model.addAttribute("elsoOsztSulyVevo", keszletService.elsoOsztalySulyVevo());
-		model.addAttribute("masodOsztSulyVevo", keszletService.masodOsztalySulyVevo());
-		model.addAttribute("harmadOsztSulyVevo", keszletService.harmadOsztalySulyVevo());
-		model.addAttribute("negyedOsztSulyVevo", keszletService.negyeddOsztalySulyVevo());
-		model.addAttribute("vastagGyokerSulyVevo", keszletService.vastagGyokerSulyVevo());
-		model.addAttribute("vekonyGyokerSulyVevo", keszletService.vekonyGyokerSulyVevo());
-		model.addAttribute("osszArVevo", keszletService.osszArVevo());
+		model.addAttribute("elsoOsztSulyVevo", String.format("%,.0f", keszletService.elsoOsztalySulyVevo()));
+		model.addAttribute("masodOsztSulyVevo", String.format("%,.0f", keszletService.masodOsztalySulyVevo()));
+		model.addAttribute("harmadOsztSulyVevo", String.format("%,.0f", keszletService.harmadOsztalySulyVevo()));
+		model.addAttribute("negyedOsztSulyVevo", String.format("%,.0f", keszletService.negyeddOsztalySulyVevo()));
+		model.addAttribute("vastagGyokerSulyVevo", String.format("%,.0f", keszletService.vastagGyokerSulyVevo()));
+		model.addAttribute("vekonyGyokerSulyVevo", String.format("%,.0f", keszletService.vekonyGyokerSulyVevo()));
+		model.addAttribute("osszArVevo", String.format("%,.0f", keszletService.osszArVevo()));
 		
-		model.addAttribute("elsoOsztSulyTelep", keszletService.elsoOsztalySulyTelep());
-		model.addAttribute("masodOsztSulyTelep", keszletService.masodOsztalySulyTelep());
-		model.addAttribute("harmadOsztSulyTelep", keszletService.harmadOsztalySulyTelep());
-		model.addAttribute("negyedOsztSulyTelep", keszletService.negyedOsztalySulyTelep());
-		model.addAttribute("vastagGyokerSulyTelep", keszletService.vastagGyokerSulyTelep());
-		model.addAttribute("vekonyGyokerSulyTelep", keszletService.vekonyGyokerSulyTelep());
+		model.addAttribute("elsoOsztSulyTelep", String.format("%,.0f", keszletService.elsoOsztalySulyTelep()));
+		model.addAttribute("masodOsztSulyTelep", String.format("%,.0f", keszletService.masodOsztalySulyTelep()));
+		model.addAttribute("harmadOsztSulyTelep", String.format("%,.0f", keszletService.harmadOsztalySulyTelep()));
+		model.addAttribute("negyedOsztSulyTelep", String.format("%,.0f", keszletService.negyedOsztalySulyTelep()));
+		model.addAttribute("vastagGyokerSulyTelep", String.format("%,.0f", keszletService.vastagGyokerSulyTelep()));
+		model.addAttribute("vekonyGyokerSulyTelep", String.format("%,.0f", keszletService.vekonyGyokerSulyTelep()));
+		
+		
 		
 		return "index";
 	}
 	
+	@GetMapping("/chart")
+	@ResponseBody
+	public List<Chart> update(){
+		
+		return keszletService.napiOszzSuly();
+	}
+	
+	@GetMapping("/termelok")
+	@ResponseBody
+	public List<Termelo> dataTableFill(){
+		
+		return termeloService.findAll();
+	}
+	
+	@GetMapping("/merlegjegytablelista")
+	@ResponseBody
+	public List<Keszlet> dataListTableFill(){
+		
+		return keszletService.findAll();
+	}
 	
 	
 	
@@ -102,14 +127,7 @@ public class MainController {
 		
 	}
 	
-	@GetMapping("/ujmerlegjegy")
-	public String postIndexMerlegjegy(Model model) {
-		
-		model.addAttribute("beallitas", beallitasService.findVetel());
-		
-		
-		return "redirect:/termelomerlegjegy";
-	}
+	
 	
 	@PostMapping("/ujmerlegjegyment")
 	public String postIndexMerlegjegy(@RequestParam Long tId,
@@ -215,10 +233,10 @@ public class MainController {
 		return "felvasarlasijegy";
 	}
 	
-	//**********************   Számla *******************************//
-	@GetMapping("/szamla")
-	public String szamla(){
-		return "szamla";
+	//**********************   Egyedi lekérdezések *******************************//
+	@GetMapping("/egyedilekerdezesek")
+	public String egyedilekerdezesek(){
+		return "egyedilekerdezesek";
 	}
 	
 	//**********************   Ügyfél szerkesztés/mentés ************//
@@ -282,14 +300,6 @@ public class MainController {
 		
 	}
 	
-	@GetMapping("/edittermelo")
-	public String Edit(@RequestParam Long termelo, Model model) {
-		//
-		model.addAttribute("termelo", termeloService.edit(termelo));
-		
-		return "ugyfelszerkesztesment";
-		
-	}
 	
 	@PostMapping("/szerkesztesment")
 	public String postIndexEdit(@RequestParam Long termeloId,
@@ -334,54 +344,6 @@ public class MainController {
 	
 	
 	//**********************   Beállítás ****************************//
-	@GetMapping("/beallitas")
-	public String beallitas(Model model){
-		
-		return "beallitas";
-	}
 	
-	@PostMapping("/ujbeallitasVetel")
-	public String postIndexBeallitasVetel(@RequestParam Integer elsoOsztalyAr,
-									@RequestParam Integer masodOsztalyAr,
-									@RequestParam Integer harmadOsztalyAr,
-									@RequestParam Integer negyedOsztalyAr,
-									@RequestParam Integer vastagGyokerAr,
-									@RequestParam Integer vekonyGyokerAr) {
-		
-		Beallitas beallitas = new Beallitas();
-		
-		beallitas.setElsoOsztalyAr(elsoOsztalyAr);
-		beallitas.setMasodOsztalyAr(masodOsztalyAr);
-		beallitas.setHarmadOsztalyAr(harmadOsztalyAr);
-		beallitas.setNegyedOsztalyAr(negyedOsztalyAr);
-		beallitas.setVastagGyokerAr(vastagGyokerAr);
-		beallitas.setVekonyGyokerAr(vekonyGyokerAr);
-		
-		
-		beallitasService.saveVetel(beallitas);
-		return "redirect:/beallitas";
-	}
-	
-	@PostMapping("/ujbeallitasEladas")
-	public String postIndexBeallitasEladas(@RequestParam Integer elsoOsztalyAr,
-									@RequestParam Integer masodOsztalyAr,
-									@RequestParam Integer harmadOsztalyAr,
-									@RequestParam Integer negyedOsztalyAr,
-									@RequestParam Integer vastagGyokerAr,
-									@RequestParam Integer vekonyGyokerAr) {
-		
-		Beallitas beallitas = new Beallitas();
-		
-		beallitas.setElsoOsztalyAr(elsoOsztalyAr);
-		beallitas.setMasodOsztalyAr(masodOsztalyAr);
-		beallitas.setHarmadOsztalyAr(harmadOsztalyAr);
-		beallitas.setNegyedOsztalyAr(negyedOsztalyAr);
-		beallitas.setVastagGyokerAr(vastagGyokerAr);
-		beallitas.setVekonyGyokerAr(vekonyGyokerAr);
-		
-		
-		beallitasService.saveEladas(beallitas);
-		return "redirect:/beallitas";
-	}
 
 }

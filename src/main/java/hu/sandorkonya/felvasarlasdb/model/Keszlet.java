@@ -1,5 +1,8 @@
 package hu.sandorkonya.felvasarlasdb.model;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +22,7 @@ public class Keszlet {
 	
 	private Long tId;
 	private String tNev;
+	private LocalDate leadasDatum;
 	private Double elsoOsztalySuly;
 	private Double masodOsztalySuly;
 	private Double harmadOsztalySuly;
@@ -27,17 +31,19 @@ public class Keszlet {
 	private Double vekonyGyokerSuly;
 	private Double osszAr;
 	private Boolean vevo;
+	private Boolean fizetve;
 	
 	public Keszlet() {
 		super();
 	}
 
-	public Keszlet(Long id, Long tId, String tNev, Double elsoOsztalySuly, Double masodOsztalySuly, Double harmadOsztalySuly,
-			Double negyedOsztalySuly, Double vastagGyokerSuly, Double vekonyGyokerSuly, Double osszAr,Boolean vevo) {
+	public Keszlet(Long id, Long tId, String tNev,LocalDate leadasDatum, Double elsoOsztalySuly, Double masodOsztalySuly, Double harmadOsztalySuly,
+			Double negyedOsztalySuly, Double vastagGyokerSuly, Double vekonyGyokerSuly, Double osszAr,Boolean vevo, Boolean fizetve) {
 		super();
 		this.id = id;
 		this.tId = tId;
 		this.tNev = tNev;
+		this.leadasDatum = leadasDatum;
 		this.elsoOsztalySuly = elsoOsztalySuly;
 		this.masodOsztalySuly = masodOsztalySuly;
 		this.harmadOsztalySuly = harmadOsztalySuly;
@@ -46,6 +52,7 @@ public class Keszlet {
 		this.vekonyGyokerSuly = vekonyGyokerSuly;
 		this.osszAr = osszAr;
 		this.vevo = vevo;
+		this.fizetve = fizetve;
 	}
 
 	public Long getId() {
@@ -68,6 +75,16 @@ public class Keszlet {
 
 	public void settNev(String tNev) {
 		this.tNev = tNev;
+	}
+	
+	
+
+	public LocalDate getLeadasDatum() {
+		return leadasDatum;
+	}
+
+	public void setLeadasDatum(LocalDate leadasDatum) {
+		this.leadasDatum = leadasDatum;
 	}
 
 	public Double getElsoOsztalySuly() {
@@ -133,6 +150,16 @@ public class Keszlet {
 	public void setVevo(Boolean vevo) {
 		this.vevo = vevo;
 	}
+
+	public Boolean getFizetve() {
+		return fizetve;
+	}
+
+	public void setFizetve(Boolean fizetve) {
+		this.fizetve = fizetve;
+	}
+	
+	
 	
 	
 	

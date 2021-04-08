@@ -8,71 +8,131 @@
 		
 	<div layout:fragment="content">
 		
-		<h2>Paraméterek beállítása</h2>
 		
-		<h3>Növény vételi ára:</h3>
+		
+		
 		<div class="container">
-			<form name="ujbeallitasVetel" action="ujbeallitasVetel" method="POST">
-			  <div class="form-group">
-			    <label for="elsoOsztalyAr">I. osztály ára</label>
-			    <input type="text" class="form-control" id="elsoOsztalyAr" name="elsoOsztalyAr" >
-			  </div>
-			  <div class="form-group">
-			    <label for="masodOsztalyAr">II. osztály ára</label>
-			    <input type="text" class="form-control" id="masodOsztalyAr" name="masodOsztalyAr">
-			  </div>
-			  <div class="form-group">
-			    <label for="harmadOsztalyAr">III. osztály ára</label>
-			    <input type="text" class="form-control" id="harmadOsztalyAr" name="harmadOsztalyAr">
-			  </div>
-			  <div class="form-group">
-			    <label for="negyedOsztalyAr">IV. osztály ára</label>
-			    <input type="text" class="form-control" id="negyedOsztalyAr" name="negyedOsztalyAr">
-			  </div>
-			  <div class="form-group">
-			    <label for="vastagGyokerAr">Vastag gyökér ára</label>
-			    <input type="text" class="form-control" id="vastagGyokerAr" name="vastagGyokerAr" >
-			  </div>
-			  <div class="form-group">
-			    <label for="vekonyGyokerAr">Vékony gyökér ára</label>
-			    <input type="text" class="form-control" id="vekonyGyokerAr" name="vekonyGyokerAr">
-			  </div>
-			  
-			  <button type="submit" class="btn btn-primary">Mentés</button>
-			</form>
+						<div class="container-fluid">
+						
+							<div class="card shadow my-3">
+								<h3 class="card-header text-primary">Vételi és eladási ár beállítása</h3>
+								<div class="card-body row">
+									<div class="col-xl-6 col-md-6 mb-4">
+										<div class="card shadow h-100 rounded-end">
+											<div class="card-body border-start border-3 border-primary ">
+												<div class="row align-items-center no-gutters">
+													
+														<h3 class="m-2">Torma vételi ára:</h3>
+													<div class="container">
+														<form name="ujbeallitasVetel" action="ujbeallitasVetel" method="POST">
+														  <div class="form-group">
+														    <label for="elsoOsztalyAr">I. osztály ára</label>
+														    <input type="text" class="form-control" id="elsoOsztalyAr" name="elsoOsztalyAr" >
+														  </div>
+														  <div class="form-group">
+														    <label for="masodOsztalyAr">II. osztály ára</label>
+														    <input type="text" class="form-control" id="masodOsztalyAr" name="masodOsztalyAr">
+														  </div>
+														  <div class="form-group">
+														    <label for="harmadOsztalyAr">III. osztály ára</label>
+														    <input type="text" class="form-control" id="harmadOsztalyAr" name="harmadOsztalyAr">
+														  </div>
+														  <div class="form-group">
+														    <label for="negyedOsztalyAr">IV. osztály ára</label>
+														    <input type="text" class="form-control" id="negyedOsztalyAr" name="negyedOsztalyAr">
+														  </div>
+														  <div class="form-group">
+														    <label for="vastagGyokerAr">Vastag gyökér ára</label>
+														    <input type="text" class="form-control" id="vastagGyokerAr" name="vastagGyokerAr" >
+														  </div>
+														  <div class="form-group">
+														    <label for="vekonyGyokerAr">Vékony gyökér ára</label>
+														    <input type="text" class="form-control" id="vekonyGyokerAr" name="vekonyGyokerAr">
+														  </div>
+														  
+														  <button type="submit" class="btn btn-primary m-2">Mentés</button>
+														</form>
+													
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-md-6 mb-4">
+										<div class="card shadow h-100">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													
+														<h3 class="m-2">Torma eladási ára:</h3>
+													<div class="container">
+														<form name="ujbeallitasEladas" action="ujbeallitasEladas" method="POST">
+														  <div class="form-group">
+														    <label for="elsoOsztalyAr">I. osztály ára</label>
+														    <input type="text" class="form-control" id="elsoOsztalyAr" name="elsoOsztalyAr" >
+														  </div>
+														  <div class="form-group">
+														    <label for="masodOsztalyAr">II. osztály ára</label>
+														    <input type="text" class="form-control" id="masodOsztalyAr" name="masodOsztalyAr">
+														  </div>
+														  <div class="form-group">
+														    <label for="harmadOsztalyAr">III. osztály ára</label>
+														    <input type="text" class="form-control" id="harmadOsztalyAr" name="harmadOsztalyAr">
+														  </div>
+														  <div class="form-group">
+														    <label for="negyedOsztalyAr">IV. osztály ára</label>
+														    <input type="text" class="form-control" id="negyedOsztalyAr" name="negyedOsztalyAr">
+														  </div>
+														  <div class="form-group">
+														    <label for="vastagGyokerAr">Vastag gyökér ára</label>
+														    <input type="text" class="form-control" id="vastagGyokerAr" name="vastagGyokerAr" >
+														  </div>
+														  <div class="form-group">
+														    <label for="vekonyGyokerAr">Vékony gyökér ára</label>
+														    <input type="text" class="form-control" id="vekonyGyokerAr" name="vekonyGyokerAr">
+														  </div>
+														  
+														  <button type="submit" class="btn btn-primary m-2">Mentés</button>
+														</form>
+													</div>
+													
+												</div>
+											</div>
+										</div>
+									</div>	
+									
+									
+									
+								</div>
+								
+								</div>
+								
+								
+								
+								
+				
+							</div>
+					
+					</div>
+		
+		<div class="row">
+			<div class="col-sm-12 col-md-6 ">
+			
+				
+				
+			</div>
+		
+			
+		
+			<div class="col-sm-12 col-md-6 ">
+			
+				
+				
+			</div>
 		</div>
 		
-		<h3>Növény eladási ára:</h3>
-		<div class="container">
-			<form name="ujbeallitasEladas" action="ujbeallitasEladas" method="POST">
-			  <div class="form-group">
-			    <label for="elsoOsztalyAr">I. osztály ára</label>
-			    <input type="text" class="form-control" id="elsoOsztalyAr" name="elsoOsztalyAr" >
-			  </div>
-			  <div class="form-group">
-			    <label for="masodOsztalyAr">II. osztály ára</label>
-			    <input type="text" class="form-control" id="masodOsztalyAr" name="masodOsztalyAr">
-			  </div>
-			  <div class="form-group">
-			    <label for="harmadOsztalyAr">III. osztály ára</label>
-			    <input type="text" class="form-control" id="harmadOsztalyAr" name="harmadOsztalyAr">
-			  </div>
-			  <div class="form-group">
-			    <label for="negyedOsztalyAr">IV. osztály ára</label>
-			    <input type="text" class="form-control" id="negyedOsztalyAr" name="negyedOsztalyAr">
-			  </div>
-			  <div class="form-group">
-			    <label for="vastagGyokerAr">Vastag gyökér ára</label>
-			    <input type="text" class="form-control" id="vastagGyokerAr" name="vastagGyokerAr" >
-			  </div>
-			  <div class="form-group">
-			    <label for="vekonyGyokerAr">Vékony gyökér ára</label>
-			    <input type="text" class="form-control" id="vekonyGyokerAr" name="vekonyGyokerAr">
-			  </div>
-			  
-			  <button type="submit" class="btn btn-primary">Mentés</button>
-			</form>
-		</div>
+		
+		
+		
 
 	</div>
 

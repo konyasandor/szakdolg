@@ -6,143 +6,514 @@
 	<title>Felvásárlás</title>
 </head>
 <body>
-		
+	
 	<div layout:fragment="content">
 	
-		<h3 id="teszt"></h3>
-		
-		<h2>Behozott torma súly összesen: </h2>
-		
-		<div class="container-fluid">
-			<table class="table">
-				<thead>
-				    <tr>
-				      <th scope="col">I. osztály (kg)</th>
-				      <th scope="col">II. osztály (kg)</th>
-				      <th scope="col">III. osztály (kg)</th>
-				      <th scope="col">IV osztály (kg)</th>
-				      <th scope="col">Vastag gyökér (kg)</th>
-				      <th scope="col">Vékony gyökér (kg)</th>
-				      
-				    </tr>
-				 </thead>
-				<tbody>
-				    <tr>
-				      <td th:text="${elsoOsztSulyTermelo}">Mark</td>
-				      <td th:text="${masodOsztSulyTermelo}">Mark</td>
-				      <td th:text="${harmadOsztSulyTermelo}">Otto</td>
-				      <td th:text="${negyedOsztSulyTermelo}">sdf</td>
-				      <td th:text="${vastagGyokerSulyTermelo}">sdf</td>
-				      <td th:text="${vekonyGyokerSulyTermelo}">sdf</td>
-				      
-				    </tr>
-				    
-			  	</tbody>
-			</table>
-			<div class="row">
-				<div class="col-md-2">
-					<h3 class="display-3">Össz kifizetés: </h3>
-				</div>
-				<div class="col-sm-1 display-4">
-					<h3 th:text="${osszArTermelo}"></h3>
-			 	</div>
-				<div class="display-4 col-sm-1">
-					<h3 class="mr-1">Ft</h3>
-				</div>
+		<div class="row d-flex justify-content-center mt-4">
+			<div class="col-sm-12 col-md-12 ">
 			
-			</div>
-		</div>
-		
-		
-		
-		<hr class="mt-2 mb-2 bg-dark">
-		
-		<br>
-		
-		<h2>Eladott torma súly összesen: </h2>
-		
-		<div class="container-fluid">
-			<table class="table">
-				<thead>
-				    <tr>
-				      <th scope="col">I. osztály (kg)</th>
-				      <th scope="col">II. osztály (kg)</th>
-				      <th scope="col">III. osztály (kg)</th>
-				      <th scope="col">IV osztály (kg)</th>
-				      <th scope="col">Vastag gyökér (kg)</th>
-				      <th scope="col">Vékony gyökér (kg)</th>
-				      
-				    </tr>
-				 </thead>
-				<tbody >
-				    <tr>
-				      <td th:text="${elsoOsztSulyVevo}">Mark</td>
-				      <td th:text="${masodOsztSulyVevo}">Mark</td>
-				      <td th:text="${harmadOsztSulyVevo}">Otto</td>
-				      <td th:text="${negyedOsztSulyVevo}">sdf</td>
-				      <td th:text="${vastagGyokerSulyVevo}">sdf</td>
-				      <td th:text="${vekonyGyokerSulyVevo}">sdf</td>
-				      
-				    </tr>
-				    
-			  	</tbody>
-			</table>
-			
-			<div class="row">
-				<div class="col-md-2">
-					<h3 class="display-3">Össz bevétel: </h3>
-				</div>
-				<div  class="col-sm-1 display-4">
-					<h3 th:text="${osszArVevo}"></h3>
-			 	</div>
-				<div class="display-4 col-sm-1">
-					<h3 class="ml-1">Ft</h3>
-				</div>
-			
-			</div>
-		
-		</div>
-		
-		<br>
-		
-		<hr>
-		
-		<br>
-		
-		<h2>Telepen lévő növény mennyiség: </h2>
-		
-		<div class="container-fluid">
-			<table class="table">
-				<thead>
-				    <tr>
-				      <th scope="col">I. osztály</th>
-				      <th scope="col">II. osztály</th>
-				      <th scope="col">III. osztály</th>
-				      <th scope="col">IV osztály</th>
-				      <th scope="col">Vastag gyökér</th>
-				      <th scope="col">Vékony gyökér</th>
-				      
-				    </tr>
-				 </thead>
-				<tbody >
-				    <tr>
-				      <td th:text="${elsoOsztSulyTelep}">2500</td>
-				      <td th:text="${masodOsztSulyTelep}">900</td>
-				      <td th:text="${harmadOsztSulyTelep}">700</td>
-				      <td th:text="${negyedOsztSulyTelep}">697</td>
-				      <td th:text="${vastagGyokerSulyTelep}">892</td>
-				      <td th:text="${vekonyGyokerSulyTelep}">166</td>
-				      
-				    </tr>
-				    
-			  	</tbody>
-			</table>
-			
-		
-		</div>
+				<div class="row">
+					<div class="container pt-3">
+						<div class="container-fluid">
+							<div class="card shadow">
+								<h3 class="card-header">Behozott torma adatai</h3>
+								<div class="card-body row">
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															I. osztály (kg)
+														</div>
+														<div class="fw-bolder text-muted " th:text="${elsoOsztSulyTermelo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															II. osztály (kg)
+														</div>
+														<div class="fw-bolder text-muted" th:text="${masodOsztSulyTermelo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>	
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															tormaosztály (kg)
+														</div>
+														<div class="fw-bolder text-muted" th:text="${harmadOsztSulyTermelo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															IV. osztály (kg)
+														</div>
+														<div class="fw-bolder  text-muted" th:text="${negyedOsztSulyTermelo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															tormaosztály (kg)
+														</div>
+														<div class="fw-bolder text-muted" th:text="${vastagGyokerSulyTermelo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light  text-primary">
+															tormaosztály (kg)
+														</div>
+														<div class="fw-bolder text-muted" th:text="${vekonyGyokerSulyTermelo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-success">
+															Össz ár (Ft)
+														</div>
+														<div class="fw-bolder" th:text="${osszArTermelo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-dollar-sign fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="container-fluid row">
+										<div class="col-xl-1"></div>
+										<div class="col-xl-10 justify-content-center">
+											<canvas id="myChart" width="200px" height="100px"></canvas>
+										</div>
+										<div class="col-xl-1"></div>
+									</div>
+									
+									
+								</div>
+								
+								</div>
+								
+								
+								
+								
+				
+						</div>
+							
+					</div>
+					
 	
-
+	                <div class="container pt-3">
+						<div class="container-fluid">
+							<div class="card shadow">
+								<h3 class="card-header">Eladott torma adatai</h3>
+								<div class="card-body row">
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															I. osztály (kg)
+														</div>
+														<div class="fw-bolder text-muted " th:text="${elsoOsztSulyVevo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															II. osztály (kg)
+														</div>
+														<div class="fw-bolder text-muted" th:text="${masodOsztSulyVevo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>	
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															tormaosztály (kg)
+														</div>
+														<div class="fw-bolder text-muted" th:text="${harmadOsztSulyVevo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															IV. osztály (kg)
+														</div>
+														<div class="fw-bolder  text-muted" th:text="${negyedOsztSulyVevo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															tormaosztály (kg)
+														</div>
+														<div class="fw-bolder text-muted" th:text="${vastagGyokerSulyVevo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light  text-primary">
+															tormaosztály (kg)
+														</div>
+														<div class="fw-bolder text-muted" th:text="${vekonyGyokerSulyVevo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-success">
+															Össz ár (Ft)
+														</div>
+														<div class="fw-bolder" th:text="${osszArVevo}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-dollar-sign fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								</div>
+						</div>
+							
+					</div>
+					 
+	                       
+					<div class="container pt-3">
+						<div class="container-fluid">
+							<div class="card shadow">
+								<h3 class="card-header">Telepen lévő torma</h3>
+								<div class="card-body row">
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															I. osztály (kg)
+														</div>
+														<div class="fw-bolder text-muted " th:text="${elsoOsztSulyTelep}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															II. osztály (kg)
+														</div>
+														<div class="fw-bolder text-muted" th:text="${masodOsztSulyTelep}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>	
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															tormaosztály (kg)
+														</div>
+														<div class="fw-bolder text-muted" th:text="${harmadOsztSulyTelep}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															IV. osztály (kg)
+														</div>
+														<div class="fw-bolder  text-muted" th:text="${negyedOsztSulyTelep}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light text-primary">
+															tormaosztály (kg)
+														</div>
+														<div class="fw-bolder text-muted" th:text="${vastagGyokerSulyTelep}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-3 col-md-6 mb-4">
+										<div class="card shadow">
+											<div class="card-body border-start border-3 border-primary rounded-end">
+												<div class="row align-items-center">
+													<div class="col mr-2">
+														<div class="fw-light  text-primary">
+															tormaosztály (kg)
+														</div>
+														<div class="fw-bolder text-muted" th:text="${vekonyGyokerSulyTelep}">
+															100
+														</div>
+													</div>
+													<div class="col-auto">
+														<span style=" color: rgba(153, 153, 153, 0.583);">
+															<i class="fas fa-weight-hanging fa-2x"></i>
+														  </span>
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+								
+								</div>
+						</div>
+							
+					</div>
+					
+		
+					
+				</div>
+			</div>
+	
+		</div>	
 	</div>
-
+	
 </body>
+
 </html>

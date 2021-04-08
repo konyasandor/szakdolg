@@ -12,19 +12,19 @@
 			<form name="ujtermelo" action="ujtermelo"  method="POST">
 			  <div class="form-group">
 			    <label for="termeloNev">Név</label>
-			    <input type="text" class="form-control" id="termeloNev" name="termeloNev" required="required">
+			    <input type="text" class="form-control" id="termeloNev" maxlength="100" name="termeloNev" required="required">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloLnev">Leánykori név</label>
-			    <input type="text" class="form-control" id="termeloLnev" name="termeloLnev">
+			    <input type="text" class="form-control" id="termeloLnev" maxlength="100" name="termeloLnev">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloCim">Cím</label>
-			    <input type="text" class="form-control" id="termeloCim" name="termeloCim" required="required">
+			    <input type="text" class="form-control" id="termeloCim" maxlength="255" name="termeloCim" required="required">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloSzuletesiHely">Születési hely</label>
-			    <input type="text" class="form-control" id="termeloSzuletesiHely" name="termeloSzuletesiHely">
+			    <input type="text" class="form-control" id="termeloSzuletesiHely" maxlength="100" name="termeloSzuletesiHely">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloSzuletesiIdo">Születési idő</label>
@@ -32,11 +32,11 @@
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloEdesAnyjaNeve">Édesanyja Neve</label>
-			    <input type="text" class="form-control" id="termeloEdesAnyjaNeve" name="termeloEdesAnyjaNeve">
+			    <input type="text" class="form-control" id="termeloEdesAnyjaNeve" maxlength="100" name="termeloEdesAnyjaNeve">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloTelefonSzam">Telefonszám</label>
-			    <input type="text" class="form-control  numberFormat" id="termeloTelefonSzam" maxlength="30" name="termeloTelefonSzam" required="required">
+			    <input type="text" class="form-control  numberFormat" id="termeloTelefonSzam" maxlength="15" name="termeloTelefonSzam" required="required">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloTajSzam">TAJ Szám</label>
@@ -44,7 +44,7 @@
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloOstermeloiIgazolvanySzam">Őstermelői igazolvány szám</label>
-			    <input type="text" class="form-control numberFormat" id="termeloOstermeloiIgazolvanySzam" name="termeloOstermeloiIgazolvanySzam" required="required">
+			    <input type="text" class="form-control numberFormat" id="termeloOstermeloiIgazolvanySzam" maxlength="30" name="termeloOstermeloiIgazolvanySzam" required="required">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloOstermeloiIgazolvanyErvenyesseg">Őstermelő Igazolvány érvényesség</label>
@@ -52,23 +52,23 @@
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloAdoazonositoJel">Adóazonosító jel</label>
-			    <input type="text" class="form-control numberFormat" id="termeloAdoazonositoJel" name="termeloAdoazonositoJel" required="required">
+			    <input type="text" class="form-control numberFormat" id="termeloAdoazonositoJel"  maxlength="30" name="termeloAdoazonositoJel" required="required">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloAdoSzam">Adószám</label>
-			    <input type="text" class="form-control numberFormat" id="termeloAdoSzam" name="termeloAdoSzam" required="required">
+			    <input type="text" class="form-control numberFormat" id="termeloAdoSzam" maxlength="30" name="termeloAdoSzam" required="required">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloCsaladiGazdasagSzam">Családi gazdaság szám</label>
-			    <input type="text" class="form-control numberFormat" id="termeloCsaladiGazdasagSzam" name="termeloCsaladiGazdasagSzam">
+			    <input type="text" class="form-control numberFormat" id="termeloCsaladiGazdasagSzam" maxlength="30" name="termeloCsaladiGazdasagSzam">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloGlobalGapSzam">Global Gap szám</label>
-			    <input type="text" class="form-control numberFormat" id="termeloGlobalGapSzam" name="termeloGlobalGapSzam">
+			    <input type="text" class="form-control numberFormat" id="termeloGlobalGapSzam" maxlength="30" name="termeloGlobalGapSzam">
 			  </div>
 			  <div class="form-group">
 			    <label for="termeloBankszamlaSzam">Bankszámlaszám</label>
-			    <input type="text" class="form-control numberFormat" id="termeloBankszamlaSzam" name="termeloBankszamlaSzam" required="required">
+			    <input type="text" class="form-control numberFormat" id="termeloBankszamlaSzam" maxlength="30" name="termeloBankszamlaSzam" required="required">
 			  </div>
 			  <button type="submit" class="btn btn-primary">Mentés</button>
 			</form>
