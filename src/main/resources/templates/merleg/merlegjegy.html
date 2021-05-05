@@ -232,6 +232,20 @@
 								  <a class="btn btn-primary" href="#" role="button" id="download">letöltés</a>
 								  <div class="container-fluid">
 									<span id="errmsg" color="red"></span>
+									<div class="container-fluid">
+									<span id="errmsg" color="red"></span>
+										<div class="container">
+											<div class="container-fluid">
+												<div class="card shadow my-3">
+													<h3 class="card-header text-primary">Felvásárló adatai:</h3>
+													<div class="card-body row">
+														<h2>BOROS TORMA KFT</h2>
+														<h3>4288 Újléta Dózsa György utca 32.</h3>
+														<h3>12118568-2-09</h3>
+													</div>
+												</div>
+											</div>
+										</div>
 										<form action="" class="  ">
 											<div class=" row ">
 												<div class="col-sm-3 mb-2 mt-2">
@@ -355,7 +369,96 @@
 									
 								  <div class="container-fluid">
 										<form name="ujmerlegjegyment" action="savemerlegjegy"  method="POST">
-										  
+										  <div class="container">
+												<div class="container-fluid">
+													<div class="card shadow my-3">
+														<h3 class="card-header text-primary">Termelő adatai:</h3>
+														<div class="card-body row">
+															<div class="container">
+															<div class="row justify-content-center">
+																<div class="col-sm">
+																	<p class="fw-bold">Név:</p>
+																</div>
+																<div class="col-md">
+																	<p class="fw-normal" id="termeloNev"></p>
+																</div>
+															</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="container">
+												<table class="table">
+												  <thead>
+												    <tr>
+												      <th scope="col">Minősítés</th>
+												      <th scope="col">Egységára</th>
+												      <th scope="col">Bruttó kg</th>
+												      <th scope="col">Levonás</th>
+												      <th scope="col">Nettó kg</th>
+												      <th scope="col">Kifizetett bruttó kg</th>
+												    </tr>
+												  </thead>
+												  <tbody  >
+												    <tr>
+												      <th scope="row">I. Osztályú</th>
+												      <td>Mark</td>
+												      <td>Otto</td>
+												      <td>@mdo</td>
+												      <td>@mdo</td>
+												      <td >@mdo </td>
+												    </tr>
+												    <tr>
+												      <th scope="row">II. Osztályú</th>
+												      <td>Jacob</td>
+												      <td>Thornton</td>
+												      <td>@fat</td>
+												      <td>@mdo</td>
+												      <td>@mdo</td>
+												    </tr>
+												    <tr>
+												      <th scope="row">III. Osztályú</th>
+												      <td>Larry the Bird</td>
+												      <td>@twitter</td>
+												      <td>@mdo</td>
+												      <td>@mdo</td>
+												      <td>@mdo</td>
+												      
+												    </tr>
+												    <tr>
+												      <th scope="row">IV. Osztályú</th>
+												      <td>Larry the Bird</td>
+												      <td>@twitter</td>
+												      <td>@mdo</td>
+												      <td>@mdo</td>
+												      <td>@mdo</td>
+												    </tr>
+												    <tr>
+												      <th scope="row">Gyökér</th>
+												      <td>Larry the Bird</td>
+												      <td>@twitter</td>
+												      <td>@mdo</td>
+												      <td>@mdo</td>
+												      <td>@mdo</td>
+												    </tr>
+												    <tr>
+												      <th scope="row">Ipari</th>
+												      <td>Larry the Bird</td>
+												      <td>@twitter</td>
+												      <td>@mdo</td>
+												      <td>@mdo</td>
+												      <td>@mdo</td>
+												    </tr>
+												    <tr>
+												      <th scope="row" colspan="4">Összesen</th>
+												      <td>@mdo</td>
+												      <td>@mdo</td>
+												    </tr>
+												  </tbody>
+												</table>
+											</div>
 										  <div class="form-group mb-2 mt-2">
 								    		<label for="termeloId">Id</label>
 								    		<input type="text" class="form-control" id="termeloId"   name="tId" readonly="readonly">

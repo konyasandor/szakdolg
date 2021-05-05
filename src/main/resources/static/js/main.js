@@ -338,7 +338,7 @@ $(function(){
 
             $.get(href, function (users) {
             	$('.newMerlegJegy #termeloId').val(users.id);
-                $('.newMerlegJegy #termeloNev').val(users.termeloNev);
+                $('.newMerlegJegy #termeloNev').text(users.termeloNev);
             
             });
     	
