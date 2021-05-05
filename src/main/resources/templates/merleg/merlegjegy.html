@@ -215,7 +215,7 @@
 				
 			</div>
 
-			<div class="newMerlegJegy">
+			<div class="newMerlegJegy" >
 					<form th:action="@{/savemerlegjegy}" method="post">
 						<div class="modal fade" id="newMerlegModal" tabindex="-1" role="dialog" aria-labelledby="ujMerlegJegy" aria-hidden="true">
 						  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
@@ -225,10 +225,11 @@
 						        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						        
 						      </div>
-						      <div class="modal-body">
+						      <div class="modal-body" id="merlegprint">
 						    	  <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
 								  <label class="btn btn-outline-primary" for="btn-check-outlined">Bruttó érték megadása</label><br>
-							
+								  	
+								  <a class="btn btn-primary" href="#" role="button" id="download">letöltés</a>
 								  <div class="container-fluid">
 									<span id="errmsg" color="red"></span>
 										<form action="" class="  ">
