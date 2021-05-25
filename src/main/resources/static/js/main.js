@@ -1,235 +1,285 @@
 $(function(){
 
-				$("#eredményElso").prop('disabled', true);
-                $("#eredményMasod").prop('disabled', true);
-                $("#eredményHarmad").prop('disabled', true);
-                $("#eredményNegyed").prop('disabled', true);
-                $("#eredményVastag").prop('disabled', true);
-                $("#eredményVekony").prop('disabled', true);
-                
-                $("#elsoMeresegy").prop('disabled', false);
-                $("#elsoMeresKetto").prop('disabled', false);
-                $("#masodMeresegy").prop('disabled', false);
-                $("#masodMeresKetto").prop('disabled', false);
-                $("#harmadMeresegy").prop('disabled', false);
-                $("#harmadMeresKetto").prop('disabled', false);
-                $("#negyedMeresegy").prop('disabled', false);
-                $("#negyedMeresKetto").prop('disabled', false);
-                $("#vastagMeresegy").prop('disabled', false);
-                $("#vastagMeresKetto").prop('disabled', false);
-                $("#vékonyMeresegy").prop('disabled', false);
-                $("#vékonyMeresKetto").prop('disabled', false);
+	
+	$('#elsoOsztEgysegAr').focusout(function(){
+	
+		var levonas = ((100-$('#elsoOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#elsoOsztBruttoSuly').val()*levonas,10);
+	
+		$('#elsoOsztalyNettoSuly').val(netto);
+		
+		$('#elsoOsztalyErteke').val(netto*$('#elsoOsztEgysegAr').val());
 
-	$('input[type="checkbox"]').click(function(){
-            if($(this).prop("checked") == true){
-                
-                $("#elsoMeresegy").prop('disabled', true);
-                $("#elsoMeresKetto").prop('disabled', true);
-                $("#masodMeresegy").prop('disabled', true);
-                $("#masodMeresKetto").prop('disabled', true);
-                $("#harmadMeresegy").prop('disabled', true);
-                $("#harmadMeresKetto").prop('disabled', true);
-                $("#negyedMeresegy").prop('disabled', true);
-                $("#negyedMeresKetto").prop('disabled', true);
-                $("#vastagMeresegy").prop('disabled', true);
-                $("#vastagMeresKetto").prop('disabled', true);
-                $("#vékonyMeresegy").prop('disabled', true);
-                $("#vékonyMeresKetto").prop('disabled', true);
-                
-                $("#eredményElso").prop('disabled', false);
-                $("#eredményMasod").prop('disabled', false);
-                $("#eredményHarmad").prop('disabled', false);
-                $("#eredményNegyed").prop('disabled', false);
-                $("#eredményVastag").prop('disabled', false);
-                $("#eredményVekony").prop('disabled', false);
-            }
-            else if($(this).prop("checked") == false){
-                
-                $("#eredményElso").prop('disabled', true);
-                $("#eredményMasod").prop('disabled', true);
-                $("#eredményHarmad").prop('disabled', true);
-                $("#eredményNegyed").prop('disabled', true);
-                $("#eredményVastag").prop('disabled', true);
-                $("#eredményVekony").prop('disabled', true);
-                
-                $("#elsoMeresegy").prop('disabled', false);
-                $("#elsoMeresKetto").prop('disabled', false);
-                $("#masodMeresegy").prop('disabled', false);
-                $("#masodMeresKetto").prop('disabled', false);
-                $("#harmadMeresegy").prop('disabled', false);
-                $("#harmadMeresKetto").prop('disabled', false);
-                $("#negyedMeresegy").prop('disabled', false);
-                $("#negyedMeresKetto").prop('disabled', false);
-                $("#vastagMeresegy").prop('disabled', false);
-                $("#vastagMeresKetto").prop('disabled', false);
-                $("#vékonyMeresegy").prop('disabled', false);
-                $("#vékonyMeresKetto").prop('disabled', false);
-            }
-        });
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+				
+	$('#elsoOsztBruttoSuly').focusout(function(){
 	
+		var levonas = ((100-$('#elsoOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#elsoOsztBruttoSuly').val()*levonas,10);
+	
+		$('#elsoOsztalyNettoSuly').val(netto);
+		
+		$('#elsoOsztalyErteke').val(netto*$('#elsoOsztEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+	
+	$('#elsoOsztLevonas').focusout(function(){
+	
+		var levonas = ((100-$('#elsoOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#elsoOsztBruttoSuly').val()*levonas,10);
+	
+		$('#elsoOsztalyNettoSuly').val(netto);
+		
+		$('#elsoOsztalyErteke').val(netto*$('#elsoOsztEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+	
+	$('#masodOsztEgysegAr').focusout(function(){
+	
+		var levonas = ((100-$('#masodOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#masodOsztBruttoSuly').val()*levonas,10);
+	
+		$('#masodOsztalyNettoSuly').val(netto);
+		
+		$('#masodOsztalyErteke').val(netto*$('#masodOsztEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+				
+	$('#masodOsztBruttoSuly').focusout(function(){
+	
+		var levonas = ((100-$('#masodOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#masodOsztBruttoSuly').val()*levonas,10);
+	
+		$('#masodOsztalyNettoSuly').val(netto);
+		
+		$('#masodOsztalyErteke').val(netto*$('#masodOsztEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+	
+	$('#masodOsztLevonas').focusout(function(){
+	
+		var levonas = ((100-$('#masodOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#masodOsztBruttoSuly').val()*levonas,10);
+	
+		$('#masodOsztalyNettoSuly').val(netto);
+		
+		$('#masodOsztalyErteke').val(netto*$('#masodOsztEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+	
+	$('#harmadOsztEgysegAr').focusout(function(){
+	
+		var levonas = ((100-$('#harmadOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#harmadOsztBruttoSuly').val()*levonas,10);
+	
+		$('#harmadOsztalyNettoSuly').val(netto);
+		
+		$('#harmadOsztalyErteke').val(netto*$('#harmadOsztEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+				
+	$('#harmadOsztBruttoSuly').focusout(function(){
+	
+		var levonas = ((100-$('#harmadOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#harmadOsztBruttoSuly').val()*levonas,10);
+	
+		$('#harmadOsztalyNettoSuly').val(netto);
+		
+		$('#harmadOsztalyErteke').val(netto*$('#harmadOsztEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+	
+	$('#harmadOsztLevonas').focusout(function(){
+	
+		var levonas = ((100-$('#harmadOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#harmadOsztBruttoSuly').val()*levonas,10);
+	
+		$('#harmadOsztalyNettoSuly').val(netto);
+		
+		$('#harmadOsztalyErteke').val(netto*$('#harmadOsztEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+	
+	$('#negyedOsztEgysegAr').focusout(function(){
+	
+		var levonas = ((100-$('#negyedOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#negyedOsztBruttoSuly').val()*levonas,10);
+	
+		$('#negyedOsztalyNettoSuly').val(netto);
+		
+		$('#negyedOsztalyErteke').val(netto*$('#negyedOsztEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+				
+	$('#negyedOsztBruttoSuly').focusout(function(){
+	
+		var levonas = ((100-$('#negyedOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#negyedOsztBruttoSuly').val()*levonas,10);
+	
+		$('#negyedOsztalyNettoSuly').val(netto);
+		
+		$('#negyedOsztalyErteke').val(netto*$('#negyedOsztEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+	
+	$('#negyedOsztLevonas').focusout(function(){
+	
+		var levonas = ((100-$('#negyedOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#negyedOsztBruttoSuly').val()*levonas,10);
+	
+		$('#negyedOsztalyNettoSuly').val(netto);
+		
+		$('#negyedOsztalyErteke').val(netto*$('#negyedOsztEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+	
+	$('#vastagEgysegAr').focusout(function(){
+	
+		var levonas = ((100-$('#vastagLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#vastagBruttoSuly').val()*levonas,10);
+	
+		$('#vastagNettoSuly').val(netto);
+		
+		$('#vastagErteke').val(netto*$('#vastagEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+				
+	$('#vastagBruttoSuly').focusout(function(){
+	
+		var levonas = ((100-$('#vastagLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#vastagBruttoSuly').val()*levonas,10);
+	
+		$('#vastagNettoSuly').val(netto);
+		
+		$('#vastagErteke').val(netto*$('#vastagEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+	
+	$('#vastagLevonas').focusout(function(){
+	
+		var levonas = ((100-$('#negyedOsztLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#negyedOsztBruttoSuly').val()*levonas,10);
+	
+		$('#vastagNettoSuly').val(netto);
+		
+		$('#vastagErteke').val(netto*$('#vastagEgysegAr').val());
+
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+	
+	$('#vekonyEgysegAr').focusout(function(){
+	
+		var levonas = ((100-$('#vekonyLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#vekonyBruttoSuly').val()*levonas,10);
+	
+		$('#vekonyNettoSuly').val(netto);
+		
+		$('#vekonyErteke').val(netto*$('#vekonyEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+				
+	$('#vekonyBruttoSuly').focusout(function(){
+	
+		var levonas = ((100-$('#vekonyLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#vekonyBruttoSuly').val()*levonas,10);
+	
+		$('#vekonyNettoSuly').val(netto);
+		
+		$('#vekonyErteke').val(netto*$('#vekonyEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+	
+	$('#vekonyLevonas').focusout(function(){
+	
+		var levonas = ((100-$('#vekonyLevonas').val())*0.01).toFixed(2);
+		var netto = parseInt($('#vekonyBruttoSuly').val()*levonas,10);
+	
+		$('#vekonyNettoSuly').val(netto);
+		
+		$('#vekonyErteke').val(netto*$('#vekonyEgysegAr').val());
+
+		
+		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
+		
+		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	});
+	
+	$('#eloleg').focusout(function(){
+	
+		
+	
+		$('#fizetendő').val($('#osszar').val()*1 - $('#eloleg').val()*1);
+		
+		});
 	
 
-	$("#szamolElso").on("click", function(){
-		
-		
-		var elsoOsztalyAr =  $("#elsoOsztalyAr").text();
-		var elsoMeresegy = $("#elsoMeresegy").val();
-		var elsoMeresKetto = $("#elsoMeresKetto").val();
-		var reszOsszeg = $("#osszAr").text();
-		var brutto = "";
-		
-		if($('input[type="checkbox"]').prop("checked") == true){
-			brutto = $("#eredményElso").val();
-		}
-		else
-		{
-			brutto = elsoMeresegy-elsoMeresKetto;
-			$("#eredményElso").val(brutto);
-			$("#masodMeresegy").val(elsoMeresKetto);
-		}
-
-		var netto = Math.round(brutto*0.95);
-		
-		$("#elsoOsztalySuly").val(netto);
-		
-		$("#osszAr").val(netto * parseInt(elsoOsztalyAr,10) + reszOsszeg);
-
-	})
-	
-	$("#szamolMasod").on("click", function(){
-	
-		var masodOsztolyAr =  $("#masodOsztolyAr").text();
-		var masodMeresegy = $("#masodMeresegy").val();
-		var masodMeresKetto = $("#masodMeresKetto").val();
-		var reszOsszeg = $("#osszAr").val();
-		var brutto = "";
-		
-		if($('input[type="checkbox"]').prop("checked") == true){
-			brutto = $("#eredményMasod").val();
-		}
-		else
-		{
-			brutto = masodMeresegy-masodMeresKetto;
-			$("#eredményMasod").val(brutto);
-			$("#harmadMeresegy").val(masodMeresKetto);
-		}
-		
-		var netto = Math.round(brutto*0.95);
-		
-		$("#masodOsztalySuly").val(netto);
-		
-		$("#osszAr").val(parseInt(netto,10) * parseInt(masodOsztolyAr,10) + parseInt(reszOsszeg,10));
-		
-	})
-	
-	$("#szamolHarmad").on("click", function(){
-	
-		var harmadOsztalyAr =  $("#harmadOsztalyAr").text();
-		var harmadMeresegy = $("#harmadMeresegy").val();
-		var harmadMeresKetto = $("#harmadMeresKetto").val();
-		var reszOsszeg = $("#osszAr").val();
-		var brutto = "";
-		
-		if($('input[type="checkbox"]').prop("checked") == true){
-			brutto = $("#eredményHarmad").val();
-		}
-		else
-		{
-			brutto = harmadMeresegy-harmadMeresKetto;
-			$("#eredményHarmad").val(brutto);
-			$("#negyedMeresegy").val(harmadMeresKetto);
-		}
-
-		var netto = Math.round(brutto*0.95);
-		
-		$("#harmadOsztalySuly").val(netto);
-
-		$("#osszAr").val(parseInt(netto,10) * parseInt(harmadOsztalyAr,10) + parseInt(reszOsszeg,10));
-		
-		
-	})
-	
-	$("#szamolNegyed").on("click", function(){
-	
-		var negyedOsztalyAr =  $("#negyedOsztalyAr").text();
-		var negyedMeresegy = $("#negyedMeresegy").val();
-		var negyedMeresKetto = $("#negyedMeresKetto").val();
-		var reszOsszeg = $("#osszAr").val();
-		var brutto = "";
-		
-		if($('input[type="checkbox"]').prop("checked") == true){
-			brutto = $("#eredményNegyed").val();
-		}
-		else
-		{
-			brutto = negyedMeresegy-negyedMeresKetto;
-			$("#eredményNegyed").val(brutto);
-			$("#vastagMeresegy").val(negyedMeresKetto);
-		}
-
-		var netto = Math.round(brutto*0.95);
-		
-		$("#negyedOsztalySuly").val(netto);
-		
-		$("#osszAr").val(parseInt(netto,10) * parseInt(negyedOsztalyAr,10) + parseInt(reszOsszeg,10));
-		
-		
-	})
-	
-	
-	$("#szamolVastag").on("click", function(){
-	
-		var vastagGyokerAr =  $("#vastagGyokerAr").text();
-		var vastagMeresegy = $("#vastagMeresegy").val();
-		var vastagMeresKetto = $("#vastagMeresKetto").val();
-		var reszOsszeg = $("#osszAr").val();
-		var brutto = "";
-		
-		if($('input[type="checkbox"]').prop("checked") == true){
-			brutto = $("#eredményVastag").val();
-		}
-		else
-		{
-			brutto = vastagMeresegy-vastagMeresKetto;
-			$("#eredményVastag").val(brutto);
-			$("#vékonyMeresegy").val(vastagMeresKetto);
-		}
-
-		var netto = Math.round(brutto*0.95);
-		
-		$("#vastagGyokerSuly").val(netto);
-
-		$("#osszAr").val(parseInt(netto,10) * parseInt(vastagGyokerAr,10) + parseInt(reszOsszeg,10));
-		
-		
-	})
-	
-	$("#szamolVekony").on("click", function(){
-	
-		var vekonyGyokerAr =  $("#vekonyGyokerAr").text();
-		var vékonyMeresegy = $("#vékonyMeresegy").val();
-		var vékonyMeresKetto = $("#vékonyMeresKetto").val();
-		var reszOsszeg = $("#osszAr").val();
-		var brutto = "";
-		
-		if($('input[type="checkbox"]').prop("checked") == true){
-			brutto = $("#eredményVekony").val();
-		}
-		else
-		{
-			brutto = vékonyMeresegy-vékonyMeresKetto;
-			$("#eredményVekony").val(brutto);
-			
-		}
-		
-		var netto = Math.round(brutto*0.95);
-		
-		$("#vekonyGyokerSuly").val(netto);
-		
-		$("#osszAr").val(parseInt(netto,10) * parseInt(vekonyGyokerAr,10) + parseInt(reszOsszeg,10));
-		
-		
-	})
+  //****************************************************** Number format ************************************************************************//
 
 	$(".numberFormat").keypress(function (e) {
      //if the letter is not digit then display error and don't type anything
@@ -237,8 +287,8 @@ $(function(){
         //display error message
         $("#errmsg").html("Csak szám!").show().fadeOut("slow");
                return false;
-    }
-   });
+	    }
+	   });
    
   //******************************************************* Ugyfel szerkesztés modal ************************************************************//
    
@@ -333,14 +383,38 @@ $(function(){
     	var id = row.find("td:eq(0)").text();
 
         var href = 'ujmerlegjegy/?id='+id;
+        
+        
+        $('#elsoOsztEgysegAr').val($('#elsoOsztalyAr').text());
+        $('#masodOsztEgysegAr').val($('#masodOsztolyAr').text());
+        $('#harmadOsztEgysegAr').val($('#harmadOsztalyAr').text());
+        $('#negyedOsztEgysegAr').val($('#negyedOsztalyAr').text());
+        $('#vastagEgysegAr').val($('#vastagGyokerAr').text());
+        $('#vekonyEgysegAr').val($('#vekonyGyokerAr').text());
        
       		
 
             $.get(href, function (users) {
-            	$('.newMerlegJegy #termeloId').val(users.id);
+            	$('.newMerlegJegy #termeloId').text(users.id);
                 $('.newMerlegJegy #termeloNev').text(users.termeloNev);
+                $('.newMerlegJegy #termeloLnev').text(users.termeloLnev);
+                $('.newMerlegJegy #termeloCim').text(users.termeloCim);
+                $('.newMerlegJegy #termeloOstermeloiIgazolvanySzam').text(users.termeloOstermeloiIgazolvanySzam);
+                $('.newMerlegJegy #termeloOstermeloiIgazolvanyErvenyesseg').text(users.termeloOstermeloiIgazolvanyErvenyesseg);
+                $('.newMerlegJegy #termeloAdoazonositoJel').text(users.termeloAdoazonositoJel);
+                $('.newMerlegJegy #termeloAdoSzam').text(users.termeloAdoSzam);
+                $('.newMerlegJegy #termeloSzuletesiHely').text(users.termeloSzuletesiHely);
+                $('.newMerlegJegy #termeloSzuletesiIdo').text(users.termeloSzuletesiIdo);
+                $('.newMerlegJegy #termeloEdesAnyjaNeve').text(users.termeloEdesAnyjaNeve);
+                $('.newMerlegJegy #termeloTajSzam').text(users.termeloTajSzam);
+                $('.newMerlegJegy #termeloCsaladiGazdasagSzam').text(users.termeloCsaladiGazdasagSzam);
+                $('.newMerlegJegy #termeloGlobalGapSzam').text(users.termeloGlobalGapSzam);
+                $('.newMerlegJegy #termeloTelefonSzam').text(users.termeloTelefonSzam);
+                $('.newMerlegJegy #termeloBankszamlaSzam').text(users.termeloBankszamlaSzam);
             
             });
+            
+            
     	
     	$('.newMerlegJegy #newMerlegModal').modal('show');
     });
