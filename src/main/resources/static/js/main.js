@@ -14,6 +14,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+		
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 				
 	$('#elsoOsztBruttoSuly').focusout(function(){
@@ -29,6 +31,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 	
 	$('#elsoOsztLevonas').focusout(function(){
@@ -44,6 +48,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 	
 	$('#masodOsztEgysegAr').focusout(function(){
@@ -59,6 +65,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 				
 	$('#masodOsztBruttoSuly').focusout(function(){
@@ -74,6 +82,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 	
 	$('#masodOsztLevonas').focusout(function(){
@@ -89,6 +99,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 	
 	$('#harmadOsztEgysegAr').focusout(function(){
@@ -104,6 +116,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 				
 	$('#harmadOsztBruttoSuly').focusout(function(){
@@ -119,6 +133,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 	
 	$('#harmadOsztLevonas').focusout(function(){
@@ -134,6 +150,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 	
 	$('#negyedOsztEgysegAr').focusout(function(){
@@ -149,6 +167,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 				
 	$('#negyedOsztBruttoSuly').focusout(function(){
@@ -164,6 +184,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 	
 	$('#negyedOsztLevonas').focusout(function(){
@@ -179,6 +201,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 	
 	$('#vastagEgysegAr').focusout(function(){
@@ -194,6 +218,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 				
 	$('#vastagBruttoSuly').focusout(function(){
@@ -209,6 +235,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 	
 	$('#vastagLevonas').focusout(function(){
@@ -223,6 +251,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 	
 	$('#vekonyEgysegAr').focusout(function(){
@@ -238,6 +268,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 				
 	$('#vekonyBruttoSuly').focusout(function(){
@@ -253,6 +285,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 	
 	$('#vekonyLevonas').focusout(function(){
@@ -268,6 +302,8 @@ $(function(){
 		$('#osszSuly').text($('#elsoOsztalyNettoSuly').val()*1 + $('#masodOsztalyNettoSuly').val()*1 + $('#harmadOsztalyNettoSuly').val()*1 + $('#negyedOsztalyNettoSuly').val()*1 + $('#vastagNettoSuly').val()*1 + $('#vekonyNettoSuly').val()*1);
 		
 		$('#osszAr').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
+	
+		$('#fizetendő').val($('#elsoOsztalyErteke').val()*1 + $('#masodOsztalyErteke').val()*1 + $('#harmadOsztalyErteke').val()*1 + $('#negyedOsztalyErteke').val()*1 + $('#vastagErteke').val()*1 + $('#vekonyErteke').val()*1);
 	});
 	
 	$('#eloleg').focusout(function(){
