@@ -44,7 +44,7 @@
 		                                            <th>Cím</th>
 		                                            <th>Telefonszám</th>
 		                                            <th></th>
-		                                            
+		                                            <th></th>
 		                                        </tr>
 		                                    </thead>
 		                                    <tfoot>
@@ -54,7 +54,7 @@
 		                                            <th>Cím</th>
 		                                            <th>Telefonszám</th>
 		                                            <th></th>
-		                                            
+		                                            <th></th>
 		                                        </tr>
 		                                    </tfoot>
 		                                    
@@ -99,53 +99,50 @@
 								    <input type="text" class="form-control" id="termeloCim"  name="termeloCim">
 								  </div>
 								  <div class="form-group">
+								    <label for="termeloOstermeloiIgazolvanySzam">Felir szám</label>
+								    <input type="text" class="form-control" id="termeloOstermeloiIgazolvanySzam"  name="termeloOstermeloiIgazolvanySzam" placeholder="AB9999">
+								  </div>
+								  <div class="form-group">
+								    <label for="termeloAdoazonositoJel">Adóazonosító jel</label>
+								    <input type="text" class="form-control" id="termeloAdoazonositoJel"  name="termeloAdoazonositoJel" placeholder="9999999999">
+								  </div>
+								  <div class="form-group">
+								    <label for="termeloAdoSzam">Adószám</label>
+								    <input type="text" class="form-control" id="termeloAdoSzam"  name="termeloAdoSzam" placeholder="999999999-1-99">
+								  </div>
+								  <div class="form-group">
 								    <label for="termeloSzuletesiHely">Születési hely</label>
 								    <input type="text" class="form-control" id="termeloSzuletesiHely"  name="termeloSzuletesiHely">
 								  </div>
 								  <div class="form-group">
 								    <label for="termeloSzuletesiIdo">Születési idő</label>
-								    <input type="date" class="form-control" id="termeloSzuletesiIdo" min="1900-01-01" max="2025-01-01" name="termeloSzuletesiIdo">
+								    <input type="date" class="form-control" id="termeloSzuletesiIdo" min="1920-01-01" max="2040-01-01"  name="termeloSzuletesiIdo">
 								  </div>
 								  <div class="form-group">
 								    <label for="termeloEdesAnyjaNeve">Édesanyja Neve</label>
 								    <input type="text" class="form-control" id="termeloEdesAnyjaNeve"  name="termeloEdesAnyjaNeve">
 								  </div>
 								  <div class="form-group">
-								    <label for="termeloTelefonSzam">Telefonszám</label>
-								    <input type="text" class="form-control" id="termeloTelefonSzam" maxlength="30"  name="termeloTelefonSzam">
-								  </div>
-								  <div class="form-group">
 								    <label for="termeloTajSzam">TAJ Szám</label>
-								    <input type="text" class="form-control" id="termeloTajSzam" maxlength="12"  name="termeloTajSzam">
+								    <input type="text" class="form-control" id="termeloTajSzam" maxlength="12"  name="termeloTajSzam" placeholder="999-999-999">
 								  </div>
 								  <div class="form-group">
-								    <label for="termeloOstermeloiIgazolvanySzam">Őstermelői igazolvány szám</label>
-								    <input type="text" class="form-control" id="termeloOstermeloiIgazolvanySzam"  name="termeloOstermeloiIgazolvanySzam">
-								  </div>
-								  <div class="form-group">
-								    <label for="termeloOstermeloiIgazolvanyErvenyesseg">Őstermelő Igazolvány érvényesség</label>
-								    <input type="date" class="form-control" id="termeloOstermeloiIgazolvanyErvenyesseg" min="1990-01-01" max="2100-01-01"  name="termeloOstermeloiIgazolvanyErvenyesseg">
-								  </div>
-								  <div class="form-group">
-								    <label for="termeloAdoazonositoJel">Adóazonosító jel</label>
-								    <input type="text" class="form-control" id="termeloAdoazonositoJel"  name="termeloAdoazonositoJel">
-								  </div>
-								  <div class="form-group">
-								    <label for="termeloAdoSzam">Adószám</label>
-								    <input type="text" class="form-control" id="termeloAdoSzam"  name="termeloAdoSzam">
-								  </div>
-								  <div class="form-group">
-								    <label for="termeloCsaladiGazdasagSzam">Családi gazdaság szám</label>
-								    <input type="text" class="form-control" id="termeloCsaladiGazdasagSzam"  name="termeloCsaladiGazdasagSzam">
+								    <label for="termeloCsaladiGazdasagSzam">ÖCSG szám</label>
+								    <input type="text" class="form-control" id="termeloCsaladiGazdasagSzam"  name="termeloCsaladiGazdasagSzam" placeholder="OCSG-00000000">
 								  </div>
 								  <div class="form-group">
 								    <label for="termeloGlobalGapSzam">Global Gap szám</label>
-								    <input type="text" class="form-control" id="termeloGlobalGapSzam"  name="termeloGlobalGapSzam">
+								    <input type="text" class="form-control" id="termeloGlobalGapSzam"  name="termeloGlobalGapSzam" placeholder="GGN-0000000000000">
+								  </div>
+								  <div class="form-group">
+								    <label for="termeloTelefonSzam">Telefonszám</label>
+								    <input type="text" class="form-control" id="termeloTelefonSzam" maxlength="30"  name="termeloTelefonSzam" placeholder="((30) 111-1111)">
 								  </div>
 								  <div class="form-group">
 								    <label for="termeloBankszamlaSzam">Bankszámlaszám</label>
-								    <input type="text" class="form-control" id="termeloBankszamlaSzam"  name="termeloBankszamlaSzam">
+								    <input type="text" class="form-control" id="termeloBankszamlaSzam"  name="termeloBankszamlaSzam" placeholder="99999999-99999999-99999999">
 								  </div>
+							
 							
 						      </div>
 						      <div class="modal-footer">
@@ -160,7 +157,7 @@
 				
 				</div>
 				
-				<div class="myFormNew">
+			<div class="myFormNew">
 					<form th:action="@{/savetermelo}" method="post">
 						<div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newUserLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -188,52 +185,48 @@
 								    <input type="text" class="form-control" id=""  name="termeloCim">
 								  </div>
 								  <div class="form-group">
+								    <label for="termeloOstermeloiIgazolvanySzam">Felir szám</label>
+								    <input type="text" class="form-control" id="termeloOstermeloiIgazolvanySzamNew"  name="termeloOstermeloiIgazolvanySzam" placeholder="AB9999999">
+								  </div>
+								  <div class="form-group">
+								    <label for="termeloAdoazonositoJel">Adóazonosító jel</label>
+								    <input type="text" class="form-control" id="termeloAdoazonositoJelNew"  name="termeloAdoazonositoJel" placeholder="9999999999">
+								  </div>
+								  <div class="form-group">
+								    <label for="termeloAdoSzam">Adószám</label>
+								    <input type="text" class="form-control" id="termeloAdoSzamNew"  name="termeloAdoSzam" placeholder="999999999-1-99">
+								  </div>
+								  <div class="form-group">
 								    <label for="termeloSzuletesiHely">Születési hely</label>
 								    <input type="text" class="form-control" id=""  name="termeloSzuletesiHely">
 								  </div>
 								  <div class="form-group">
 								    <label for="termeloSzuletesiIdo">Születési idő</label>
-								    <input type="date" class="form-control" id="" min="1990-01-01" max="2025-01-01" name="termeloSzuletesiIdo">
+								    <input type="date" class="form-control" id="termeloSzuletesiIdo" min="1920-01-01" max="2025-01-01" name="termeloSzuletesiIdo">
 								  </div>
 								  <div class="form-group">
 								    <label for="termeloEdesAnyjaNeve">Édesanyja Neve</label>
 								    <input type="text" class="form-control" id=""  name="termeloEdesAnyjaNeve">
 								  </div>
 								  <div class="form-group">
-								    <label for="termeloTelefonSzam">Telefonszám</label>
-								    <input type="text" class="form-control" id="" maxlength="30"  name="termeloTelefonSzam">
-								  </div>
-								  <div class="form-group">
 								    <label for="termeloTajSzam">TAJ Szám</label>
-								    <input type="text" class="form-control" id="" maxlength="12"  name="termeloTajSzam">
+								    <input type="text" class="form-control" id="termeloTajSzamNew" maxlength="12"  name="termeloTajSzam" placeholder="999-999-999">
 								  </div>
 								  <div class="form-group">
-								    <label for="termeloOstermeloiIgazolvanySzam">Őstermelői igazolvány szám</label>
-								    <input type="text" class="form-control" id=""  name="termeloOstermeloiIgazolvanySzam">
-								  </div>
-								  <div class="form-group">
-								    <label for="termeloOstermeloiIgazolvanyErvenyesseg">Őstermelő Igazolvány érvényesség</label>
-								    <input type="date" class="form-control" id="" min="1990-01-01" max="2025-01-01"  name="termeloOstermeloiIgazolvanyErvenyesseg">
-								  </div>
-								  <div class="form-group">
-								    <label for="termeloAdoazonositoJel">Adóazonosító jel</label>
-								    <input type="text" class="form-control" id=""  name="termeloAdoazonositoJel">
-								  </div>
-								  <div class="form-group">
-								    <label for="termeloAdoSzam">Adószám</label>
-								    <input type="text" class="form-control" id=""  name="termeloAdoSzam">
-								  </div>
-								  <div class="form-group">
-								    <label for="termeloCsaladiGazdasagSzam">Családi gazdaság szám</label>
-								    <input type="text" class="form-control" id=""  name="termeloCsaladiGazdasagSzam">
+								    <label for="termeloCsaladiGazdasagSzam">ÖCSG szám</label>
+								    <input type="text" class="form-control" id="termeloCsaladiGazdasagSzamNew"  name="termeloCsaladiGazdasagSzam" placeholder="OCSG-00000000">
 								  </div>
 								  <div class="form-group">
 								    <label for="termeloGlobalGapSzam">Global Gap szám</label>
-								    <input type="text" class="form-control" id=""  name="termeloGlobalGapSzam">
+								    <input type="text" class="form-control" id="termeloGlobalGapSzamNew"  name="termeloGlobalGapSzam" placeholder="GGN-0000000000000">
+								  </div>
+								  <div class="form-group">
+								    <label for="termeloTelefonSzam">Telefonszám</label>
+								    <input type="text" class="form-control" id="termeloTelefonSzamNew" maxlength="30"  name="termeloTelefonSzam" placeholder="((30) 111-1111)">
 								  </div>
 								  <div class="form-group">
 								    <label for="termeloBankszamlaSzam">Bankszámlaszám</label>
-								    <input type="text" class="form-control" id=""  name="termeloBankszamlaSzam">
+								    <input type="text" class="form-control" id="termeloBankszamlaSzamNew"  name="termeloBankszamlaSzam" placeholder="99999999-99999999-99999999">
 								  </div>
 							
 						      </div>
@@ -250,9 +243,29 @@
 				</div>
 			
 			
+				<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Ügyfél törlése</h5>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+				         
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <p id="askName"></p>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+				        <button type="button" class="btn btn-primary" id="deleteUserBtn">Törlés</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
 			
 		
-		</div>
+		
 		
 		
 

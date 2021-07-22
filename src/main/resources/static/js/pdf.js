@@ -1,9 +1,16 @@
 $(function(){
     $("#download").on("click", function () {
+    
+    	var nev = $('#termeloNev').val();
+    	
+    	const d = new Date();
+		var year = d.getFullYear();
+		var month = d.getMonth();
+		var day = d.getDate();
 
         var opt = {
             margin:       10,
-            filename:     'myfile.pdf',
+            filename:     nev + '_' + year + '/' + month + '/' + day + '.pdf',
             image:        { type: 'jpeg', quality: 0.98 },
             html2canvas:  { scale: 4 },
             jsPDF:        { unit: 'mm', format: 'letter', orientation: 'portrait' }

@@ -384,6 +384,44 @@ $(function(){
     	$('.myFormNew #newModal').modal('show');
     });
     
+    $('#ugyfelTable').on('click','.deleteUser', function() {
+    
+    	var row = $(this).closest("tr");
+    	var id = row.find("td:eq(0)").text();
+    	var name = row.find("td:eq(1)").text();
+    
+    	console.log(name);
+    	$('#modalDelete').modal('show');
+    	
+    	$('#askName').text("Biztosan törlöd a " + name + " felhasználót?");
+    	
+	    	$('#deleteUserBtn').on('click', function(event) {
+	    	
+	    	
+	    	
+	    	var href = 'deletetermelo/?id='+id;
+	    	
+	    	$.ajax({
+		        type : "DELETE",
+		        url : 'deletetermelo/?id='+id,
+		        data: {id : id},
+		        contentType: "application/json",
+		        dataType : 'json',
+		        success: function (result) {       
+		               console.log(result);                
+		        },
+		        error: function (e) {
+		            console.log(e);
+		        }
+		   }) 
+		   
+		   location.reload(); 
+	    });
+    });
+    
+    
+    
+    
     //**************************************************************Kereső szűrés***********************************************************************//
     
     $('#txtSearch').on('keyup', function(){
@@ -415,6 +453,11 @@ $(function(){
    
     $('#merlegjegyTable').on('click','.newMerleg', function() {
     
+    	const d = new Date();
+		var year = d.getFullYear();
+		var month = d.getMonth();
+		var day = d.getDate();
+    
     	var row = $(this).closest("tr");
     	var id = row.find("td:eq(0)").text();
 
@@ -431,16 +474,24 @@ $(function(){
       		
 
             $.get(href, function (users) {
-            	$('.newMerlegJegy #termeloId').text(users.id);
-                $('.newMerlegJegy #termeloNev').text(users.termeloNev);
+            	$('.newMerlegJegy #termeloId').val(users.id);
+                $('.newMerlegJegy #termeloNev').val(users.termeloNev);
                 $('.newMerlegJegy #termeloLnev').text(users.termeloLnev);
                 $('.newMerlegJegy #termeloCim').text(users.termeloCim);
                 $('.newMerlegJegy #termeloOstermeloiIgazolvanySzam').text(users.termeloOstermeloiIgazolvanySzam);
-                $('.newMerlegJegy #termeloOstermeloiIgazolvanyErvenyesseg').text(users.termeloOstermeloiIgazolvanyErvenyesseg);
+                
                 $('.newMerlegJegy #termeloAdoazonositoJel').text(users.termeloAdoazonositoJel);
                 $('.newMerlegJegy #termeloAdoSzam').text(users.termeloAdoSzam);
                 $('.newMerlegJegy #termeloSzuletesiHely').text(users.termeloSzuletesiHely);
-                $('.newMerlegJegy #termeloSzuletesiIdo').text(users.termeloSzuletesiIdo);
+                var dateValue = users.termeloSzuletesiIdo.split(/[- T :]/);
+                var formatDate2 = new Date(Date.UTC(dateValue[0], dateValue[1]-1, dateValue[2]));
+                month = '' + (formatDate2.getMonth() + 1),
+        		day = '' + formatDate2.getDate(),
+        		year = formatDate2.getFullYear();
+        		if (month.length < 2) month = '0' + month;
+    			if (day.length < 2) day = '0' + day;
+    			var szuletesiDatum2 = [year, month, day].join('-');
+                $('.newMerlegJegy #termeloSzuletesiIdo').text(szuletesiDatum2);
                 $('.newMerlegJegy #termeloEdesAnyjaNeve').text(users.termeloEdesAnyjaNeve);
                 $('.newMerlegJegy #termeloTajSzam').text(users.termeloTajSzam);
                 $('.newMerlegJegy #termeloCsaladiGazdasagSzam').text(users.termeloCsaladiGazdasagSzam);
@@ -450,7 +501,7 @@ $(function(){
             
             });
             
-            
+        $('#leadasDatum').text(year + '/' + month + '/' + day);   
     	
     	$('.newMerlegJegy #newMerlegModal').modal('show');
     });
@@ -497,8 +548,26 @@ $(function(){
     
     });
     
+    //***************************************************************Ügyfelek masking***************************************************************************//
     
-            
-        
+    $('#termeloTelefonSzam').inputmask({"mask": "(99) 999-9999"});
+    $('#termeloTelefonSzamNew').inputmask({"mask": "(99) 999-9999"}); 
+    $('#termeloTajSzam').inputmask({"mask": "999-999-999"});
+    $('#termeloTajSzamNew').inputmask({"mask": "999-999-999"}); 
+    $('#termeloOstermeloiIgazolvanySzam').inputmask({"mask": "AA9999999"});
+    $('#termeloOstermeloiIgazolvanySzamNew').inputmask({"mask": "AA9999999"});     
+    $('#termeloAdoazonositoJel').inputmask({"mask": "9999999999"});
+    $('#termeloAdoazonositoJelNew').inputmask({"mask": "9999999999"});
+    $('#termeloAdoSzam').inputmask({"mask": "99999999-9-99"});
+    $('#termeloAdoSzamNew').inputmask({"mask": "99999999--99"});
+    $('#termeloCsaladiGazdasagSzam').inputmask({"mask": "AAAA-99999999"});
+    $('#termeloCsaladiGazdasagSzamNew').inputmask({"mask": "AAAA-99999999"});  
+    $('#termeloGlobalGapSzam').inputmask({"mask": "AAA-9999999999999"});
+    $('#termeloGlobalGapSzamNew').inputmask({"mask": "AAA-99999999"}); 
+    $('#termeloBankszamlaSzam').inputmask({"mask": "99999999-99999999-99999999"});
+    $('#termeloBankszamlaSzamNew').inputmask({"mask": "99999999-99999999-99999999"});   
+    
+    $('#elsoOsztalyErteke').inputmask('999.999.999',{numericInput: true});
+       
 })
 

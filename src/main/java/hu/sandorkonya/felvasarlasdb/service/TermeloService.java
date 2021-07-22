@@ -43,6 +43,11 @@ public class TermeloService {
 	public Optional<Termelo> findById(Long id){
 		return termeloRepository.findById(id);
 	}
+	
+	public void delete(Long id) {
+		
+		termeloRepository.deleteById(id);
+	}
 
 	
 	

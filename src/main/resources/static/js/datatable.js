@@ -164,7 +164,8 @@ $(function(){
 		          { "mData": "termeloNev" },
 				  { "mData": "termeloCim" },
 				  { "mData": "termeloTelefonSzam" },
-				  { "defaultContent": '<button type="button" class="btn editUser"> <i class="fas fa-external-link-alt"></i></button>' }
+				  { "defaultContent": '<button type="button" class="btn editUser"> <i class="far fa-edit"></i></button>' },
+				  { "defaultContent": '<button type="button" class="btn deleteUser"> <i class="far fa-trash-alt"></i></button>' }
 				  
 			],
             language: {
@@ -313,29 +314,54 @@ $(function(){
     // `d` is the original data object for the row
     return '<div class="card-body">'+
 		    '<table class="table table-primary table-striped table-hover">'+
+		    	'<tr>'+
+		            '<td></td>'+
+		            '<td>' + 'Egységár' + '</td>'+
+		            '<td>' + 'Levonás' + '</td>'+
+		            '<td>' + 'Netto Súly' + '</td>'+
+		            '<td>' + 'Kifizetett bruttó Ft' + '</td>'+
+		        '</tr>'+
 		        '<tr>'+
-		            '<td>I. osztály súly</td>'+
+		            '<td>I. osztály</td>'+
+		            '<td>'+d.elsoOsztEgysegAr+'</td>'+
+		            '<td>'+d.elsoOsztLevonas+'</td>'+
 		            '<td>'+d.elsoOsztalySuly+'</td>'+
+		            '<td>'+d.elsoOsztalyErteke+'</td>'+
 		        '</tr>'+
 		        '<tr>'+
-		            '<td>II. osztály súly</td>'+
+		            '<td>II. osztály</td>'+
+		            '<td>'+d.masodOsztEgysegAr+'</td>'+
+		            '<td>'+d.masodOsztLevonas+'</td>'+
 		            '<td>'+d.masodOsztalySuly+'</td>'+
+		            '<td>'+d.masodOsztalyErteke+'</td>'+
 		        '</tr>'+
 		        '<tr>'+
-		            '<td>III. osztály súly</td>'+
+		            '<td>III. osztály</td>'+
+		            '<td>'+d.harmadOsztEgysegAr+'</td>'+
+		            '<td>'+d.harmadOsztLevonas+'</td>'+
 		            '<td>'+d.harmadOsztalySuly+'</td>'+
+		            '<td>'+d.harmadOsztalyErteke+'</td>'+
 		        '</tr>'+
 		        '<tr>'+
-		            '<td>IV. osztály súly</td>'+
+		            '<td>IV. osztály</td>'+
+		            '<td>'+d.negyedOsztEgysegAr+'</td>'+
+		            '<td>'+d.negyedOsztLevonas+'</td>'+
 		            '<td>'+d.negyedOsztalySuly+'</td>'+
+		            '<td>'+d.negyedOsztalyErteke+'</td>'+
 		        '</tr>'+
 		        '<tr>'+
-		            '<td>Vastaggyökér súly</td>'+
+		            '<td>Gyökér</td>'+
+		            '<td>'+d.vastagEgysegAr+'</td>'+
+		            '<td>'+d.vastagLevonas+'</td>'+
 		            '<td>'+d.vastagGyokerSuly+'</td>'+
+		            '<td>'+d.vastagErteke+'</td>'+
 		        '</tr>'+
 		        '<tr>'+
-		            '<td>Vékonygyökér súly</td>'+
+		            '<td>Ipari</td>'+
+		            '<td>'+d.vekonyEgysegAr+'</td>'+
+		            '<td>'+d.vekonyLevonas+'</td>'+
 		            '<td>'+d.vekonyGyokerSuly+'</td>'+
+		            '<td>'+d.vekonyErteke+'</td>'+
 		        '</tr>'+
 		        
 		    '</table>'+
