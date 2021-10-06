@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org"	layout:decorator="main">
+<head>
+	<meta charset="utf-8" />
+	<title>Felvásárlás</title>
+	
+</head>
+<body>
+		
+	<div layout:fragment="content">
+	
+		<div class="container">
+						<div class="container-fluid">
+						
+						
+						
+								<div class="card shadow mb-4">
+		                        <div class="card-header py-3">
+		                            <h3 class="m-0 font-weight-bold text-primary">Nem feldolgozott mérlegjegy lista</h3>
+		                        </div>
+		                        <div class="card-body">
+		                            <div class="table-responsive">
+		                                <table class="table table-bordered table-striped" id="UnpaidMerlegjegyLista" style="width:100%">
+		                                    <thead class="dt-center">
+		                                        <tr>
+		                                        	<th></th>
+		                                            <th>#</th>
+		                                            <th>Név</th>
+		                                            <th>Dátum</th>
+		                                            <th>Össz Ár</th>
+		                                            <th>Hozzáadás</th>
+		                                            
+		                                            
+		                                        </tr>
+		                                    </thead>
+		                                    <tfoot>
+		                                        <tr>
+		                                        	<th></th>
+		                                            <th>#</th>
+		                                            <th>Név</th>
+		                                            <th>Dátum</th>
+		                                            <th>Össz Ár</th>
+		                                            <th>Hozzáadás</th>
+		                                            
+		                                        </tr>
+		                                    </tfoot>
+		                                    
+		                                </table>
+		                            </div>
+		                        </div>
+		                    </div>
+						</div>
+					</div>
+			
+			<div class="container">
+						<div class="container-fluid">
+						
+						
+							<form name="ujFelvasarlasiJegy" action="saveFelvasarlasJegy"  method="POST">
+								<div class="card shadow mb-4">
+		                        <div class="card-header py-3">
+		                            <h3 class="m-0 font-weight-bold text-primary">Összesített mérlegjegyek</h3>
+		                        </div>
+		                        <div class="card-body">
+		                        	<div>
+		                        		<p th:text="${felvasarlasiJegy.id}" id="felvasarlasiJegyId" style="visibility:hidden"></p>
+		                        		<p th:text="${beallitas.elsoOsztalyAr}" id="elsoOsztalyAr" style="visibility:hidden"></p>
+		                        		<p th:text="${beallitas.masodOsztalyAr}" id="masodOsztalyAr" style="visibility:hidden"></p>
+		                        		<p th:text="${beallitas.harmadOsztalyAr}" id="harmadOsztalyAr" style="visibility:hidden"></p>
+		                        		<p th:text="${beallitas.negyedOsztalyAr}" id="negyedOsztalyAr" style="visibility:hidden"></p>
+		                        		<p th:text="${beallitas.vastagGyokerAr}" id="vastagGyokerAr" style="visibility:hidden"></p>
+		                        		<p th:text="${beallitas.vekonyGyokerAr}" id="vekonyGyokerAr" style="visibility:hidden"></p>
+		                        	</div>
+		                            <div class="table-responsive">
+		                                <table class="table table-striped table-hover"  style="width:100%">
+		                                    <thead>
+		                                        <tr>
+		                                        	<th class="text-center">Megnevezés</th>
+		                                            <th class="text-center">Nettó súly (kg)</th>
+		                                            <th class="text-center">Érték</th>
+
+		                                        </tr>
+		                                        <tr>
+		                                        	<th class="text-center">I. osztály</th>
+		                                            <td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="elsoOsztSuly" name="elsoOsztalyBruttoSuly" value="0" readonly>
+		                                            </td>
+		                                       		<td>
+		                                       			<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="elsoOsztAr" name="elsoOsztErtek" value="0" readonly>
+		                                       		</td>
+		                                            
+		                                        </tr>
+		                                        <tr>
+		                                        	<th class="text-center">II. osztály</th>
+		                                        	<td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="masodOsztSuly" name="masodOsztalyBruttoSuly" value="0" readonly>
+		                                            </td>
+		                                       		<td>
+		                                       			<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="masodOsztAr" name="masodOsztErtek" value="0" readonly>
+		                                       		</td>
+		                                        	
+		                                         
+		                                        </tr>
+		                                        <tr>
+		                                        	<th class="text-center">III. osztály</th>
+		                                        	<td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="harmadOsztSuly" name="harmadOsztalyBruttoSuly" value="0" readonly>
+		                                            </td>
+		                                       		<td>
+		                                       			<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="harmadOsztAr" name="harmadOsztErtek" value="0" readonly>
+		                                       		</td>
+		                                            
+		                                        </tr>
+		                                        <tr>
+		                                        	<th class="text-center">IV. osztály</th>
+		                                        	<td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="negyedOsztSuly" name="negyedOsztalyBruttoSuly" value="0" readonly>
+		                                            </td>
+		                                       		<td>
+		                                       			<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="negyedOsztAr" name="negyedOsztErtek" value="0" readonly>
+		                                       		</td>
+		                                           
+		                                        </tr>
+		                                        <tr>
+		                                        	<th class="text-center">Gyökér</th>
+		                                        	<td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="vastagSuly" name="vastagBruttoSuly" value="0" readonly>
+		                                            </td>
+		                                       		<td>
+		                                       			<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="vastagAr" name="vastagErtek" value="0" readonly>
+		                                       		</td>
+		                                            
+		                                        </tr>
+		                                        <tr>
+		                                        	<th class="text-center">Ipari</th>
+		                                        	<td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="vekonySuly" name="vekonyBruttoSuly" value="0" readonly>
+		                                            </td>
+		                                       		<td>
+		                                       			<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="vekonyAr" name="vekonyErtek" value="0" readonly>
+		                                       		</td>
+		                                            
+		                                        </tr>
+		                                        <tr>
+		                                        	<th></th>
+		                                            <th class="text-center">Össz Ár (Ft) </th>
+		                                            <td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark  inputmask"  id="osszAr" name="osszErtek" value="0" readonly>
+		                                            </td>
+		                                        </tr>
+		                                    </thead>
+		                                    
+		                                    
+		                                </table>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    </form>
+						</div>
+					</div>		
+					
+			<div class="container">
+				<div class="container-fluid">
+				<div class="card shadow mb-4">
+		                        <div class="card-header py-3">
+		                            <h3 class="m-0 font-weight-bold text-primary">Al felvásárlási lista</h3>
+		                        </div>
+		                        <div class="card-body">
+									
+		                        		<div class="row">
+					                        <div class="col-5">
+					                        	<select class="form-select"  id="termeloSelect" th:name="id">
+												  <option th:each="termelok : ${termelo}" 
+												          th:value="${termelok.id}" 
+												          th:text="${termelok.nev} + '  ' +  ${termelok.lakcim}" 
+												          >Wireframe</option>
+												</select>
+					                        
+					                        </div>
+					                        
+					                        <div class="col-auto">
+					                        
+					                        	<p>Érték:</p>
+					                        </div>
+					                        
+					                        <div class="col-auto">
+
+					                        	<input type="text" class="form-control" id="jegyErtek" value="1000000">
+					                        </div>
+					                        
+					                        
+					                        <div class="col-2">
+					                        	<button type="button" class="btn btn-primary"  id="ujAlfelvasarlaiJegyGomb">
+					                        		Hozzáad
+					                        	</button>
+					                        </div>
+			                        
+			                        	</div>
+		                        	
+		                 			
+		                 		</div>
+				
+				</div>
+			
+			</div>
+		
+	
+	</div>
+	
+	
+	
+	<div class="modal fade" id="ujAlfelvasarlaiJegy" tabindex="-1" role="dialog" aria-labelledby="ujAlfelvasarlaiJegyLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="ujAlfelvasarlaiJegyLabel">Al Mérlegjegy Adatai</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+	      </div>
+	      <div class="modal-body">
+	      <form th:action="@{/felvasarlas/savealfelvasarlasijegy}" method="post">
+	       <div class="table-responsive">
+		                                <table class="table table-striped table-hover"  style="width:100%">
+		                                    <thead>
+		                                        <tr>
+		                                        	<th class="text-center">Megnevezés</th>
+		                                            <th class="text-center">Nettó súly (kg)</th>
+		                                            <th class="text-center">Érték</th>
+
+		                                        </tr>
+		                                        <tr>
+		                                        	<th class="text-center">I. osztály</th>
+		                                            <td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="AljegyelsoOsztSuly" name="elsoOsztalyBruttoSuly" value="0" >
+		                                            </td>
+		                                       		<td>
+		                                       			<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="AljegyelsoOsztAr" name="elsoOsztErtek" value="0" >
+		                                       		</td>
+		                                            
+		                                        </tr>
+		                                        <tr>
+		                                        	<th class="text-center">II. osztály</th>
+		                                        	<td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="AljegymasodOsztSuly" name="masodOsztalyBruttoSuly" value="0" >
+		                                            </td>
+		                                       		<td>
+		                                       			<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="AljegymasodOsztAr" name="masodOsztErtek" value="0" >
+		                                       		</td>
+		                                        	
+		                                         
+		                                        </tr>
+		                                        <tr>
+		                                        	<th class="text-center">III. osztály</th>
+		                                        	<td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="AljegyharmadOsztSuly" name="harmadOsztalyBruttoSuly" value="0" >
+		                                            </td>
+		                                       		<td>
+		                                       			<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="AljegyharmadOsztAr" name="harmadOsztErtek" value="0" >
+		                                       		</td>
+		                                            
+		                                        </tr>
+		                                        <tr>
+		                                        	<th class="text-center">IV. osztály</th>
+		                                        	<td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="AljegynegyedOsztSuly" name="negyedOsztalyBruttoSuly" value="0" >
+		                                            </td>
+		                                       		<td>
+		                                       			<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="AljegynegyedOsztAr" name="negyedOsztErtek" value="0" >
+		                                       		</td>
+		                                           
+		                                        </tr>
+		                                        <tr>
+		                                        	<th class="text-center">Gyökér</th>
+		                                        	<td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="AljegyvastagSuly" name="vastagBruttoSuly" value="0" >
+		                                            </td>
+		                                       		<td>
+		                                       			<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="AljegyvastagAr" name="vastagErtek" value="0" >
+		                                       		</td>
+		                                            
+		                                        </tr>
+		                                        <tr>
+		                                        	<th class="text-center">Ipari</th>
+		                                        	<td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="AljegyvekonySuly" name="vekonyBruttoSuly" value="0" >
+		                                            </td>
+		                                       		<td>
+		                                       			<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark inputmask"  id="AljegyvekonyAr" name="vekonyErtek" value="0" >
+		                                       		</td>
+		                                            
+		                                        </tr>
+		                                        <tr>
+		                                        	<th></th>
+		                                            <th class="text-center">Össz Ár (Ft) </th>
+		                                            <td>
+		                                            	<input type="text" class="form-control border-0 fw-bold bg-transparent text-dark  inputmask"  id="AljegyosszAr" name="osszErtek" value="0" >
+		                                            </td>
+		                                        </tr>
+		                                    </thead>
+		                                    
+		                                    
+		                                </table>
+		                            </div>
+		                           <button type="submit" class="btn btn-primary">Save changes</button> 
+		                           
+		                </form>
+		                <div class="modal-footer">
+	        				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+	        
+	      				</div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+	
+	
+			
+</body>
+</html>
