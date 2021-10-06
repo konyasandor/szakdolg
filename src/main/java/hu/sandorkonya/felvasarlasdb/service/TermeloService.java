@@ -1,5 +1,6 @@
 package hu.sandorkonya.felvasarlasdb.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import hu.sandorkonya.felvasarlasdb.model.Termelo;
+import hu.sandorkonya.felvasarlasdb.model.TermeloId;
 import hu.sandorkonya.felvasarlasdb.repository.TermeloRepository;
 
 @Service
@@ -49,7 +51,25 @@ public class TermeloService {
 		termeloRepository.deleteById(id);
 	}
 
-	
+	public List<TermeloId> findNevId(){
+		
+		List<Termelo> tList = termeloRepository.findAll();
+		
+		List<TermeloId> newList = new ArrayList<>();
+		
+		for (Termelo item : tList) {
+			TermeloId temp = new TermeloId();
+			
+			temp.setId(item.getId());
+			temp.setNev(item.getTermeloNev());
+			temp.setLakcim(item.getTermeloCim());
+			
+			newList.add(temp);
+		}
+		
+		return newList;
+		
+	}
 	
 	
 }

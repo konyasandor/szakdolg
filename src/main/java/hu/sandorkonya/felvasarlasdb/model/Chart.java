@@ -1,6 +1,7 @@
 package hu.sandorkonya.felvasarlasdb.model;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Chart {
 	
@@ -32,8 +33,8 @@ public class Chart {
 		return datum;
 	}
 
-	public void setDatum(LocalDate datum) {
-		this.datum = datum;
+	public void setDatum(LocalDate date) {
+		this.datum = date;
 	}
 
 	public Double getNapiElsoOsszSuly() {
@@ -83,6 +84,7 @@ public class Chart {
 	public void setNapiVekonyOsszSuly(Double napiVekonyOsszSuly) {
 		this.napiVekonyOsszSuly = napiVekonyOsszSuly;
 	}
+
 	
 	
 	

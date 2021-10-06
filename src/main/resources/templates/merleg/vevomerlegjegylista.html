@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hu"	layout:decorator="main">
+<head>
+	<meta charset="utf-8" />
+	<title>Felvásárlás</title>
+</head>
+<body>
+		
+	<div layout:fragment="content">
+		
+				<div class="container">
+						<div class="container-fluid">
+						
+						
+						
+								<div class="card shadow mb-4">
+		                        <div class="card-header py-3">
+		                            <h3 class="m-0 font-weight-bold text-primary">Vevői mérlegjegy lista</h3>
+		                        </div>
+		                        <div class="card-body">
+		                            <div class="table-responsive">
+		                                <table class="table table-bordered table-striped" id="vevomerlegjegyLista" style="width:100%">
+		                                    <thead>
+		                                        <tr>
+		                                        	
+		                                            <th>#</th>
+		                                            <th>Név</th>
+		                                            <th>Dátum</th>
+		                                            <th>Számla sorszám</th>
+		                                            <th>Össz Ár</th>
+		                                            <th>Fizetve</th>
+		                                            <th></th>
+		                                            
+		                                            
+		                                            
+		                                        </tr>
+		                                    </thead>
+		                                    <tfoot>
+		                                        <tr>
+		                                        	
+		                                            <th>#</th>
+		                                            <th>Név</th>
+		                                            <th>Dátum</th>
+		                                            <th>Számla sorszám</th>
+		                                            <th>Össz Ár</th>
+		                                            <th>Fizetve</th>
+		                                            <th></th>
+		                                            
+		                                            
+		                                            
+		                                        </tr>
+		                                    </tfoot>
+		                                    
+		                                </table>
+		                            </div>
+		                        </div>
+		                    </div>
+						</div>
+					</div>
+		
+		<div class="ackmjegy">
+			<form th:action="@{/merleg/ackvevomerlegjegy}" action="ackvevomerlegjegy" method="POST">
+			<div class="modal fade" id="modalAckMerlegjegy" tabindex="-1" role="dialog" aria-labelledby="ackMerlegjegy" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="ackMerlegjegy">Mérlegjegy frissítés</h5>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+				         
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				      
+				      	<div class="row justify-content-center m-0 p-0">
+							<div class="col-sm  m-0 p-0">
+								<p class="fw-bold m-0 p-0">Mérlegjegy sorszáma</p>
+							</div>
+							<div class="col-sm m-0 p-0">
+								<input type="text" class="form-control border-0 fw-normal m-0 p-0 bg-transparent text-dark" id="mId" name="id" readonly>
+																		
+							</div>
+							<div class="col-sm  m-0 p-0">
+								<p class="fw-bold m-0 p-0">Számla sorszám</p>
+							</div>
+							<div class="col-sm m-0 p-0">
+								<input type="text" class="form-control border-0 fw-normal m-0 p-0 bg-transparent text-dark" id="szamlaSorszam" name="szamlaSorszam" readonly>
+																		
+							</div>
+						</div>
+				        <input type="date" class="form-control" id="kifizetesDatum" min="1920-01-01" max="2040-01-01"  name="kifizetesDatum" required>
+				     
+				      </div>
+				      
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+				        <button type="submit" class="btn btn-primary" id="deleteMerlegBtn">Mentés</button>
+				      </div>
+				    </div>
+				  </div>
+			</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

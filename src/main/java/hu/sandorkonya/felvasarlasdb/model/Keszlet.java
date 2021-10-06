@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -52,6 +54,10 @@ public class Keszlet {
 	private Double kifizetendo;
 	private Boolean vevo;
 	private Boolean fizetve;
+	private String penznem;
+	private String szamlaSorszam;
+	private LocalDate fizetesiHatarido;
+	private LocalDate kifizetesDatum;
 	
 	public Keszlet() {
 		super();
@@ -64,7 +70,7 @@ public class Keszlet {
 			Double harmadOsztalySuly, Double negyedOsztalySuly, Double vastagGyokerSuly, Double vekonyGyokerSuly,
 			Double elsoOsztalyErteke, Double masodOsztalyErteke, Double harmadOsztalyErteke, Double negyedOsztalyErteke,
 			Double vastagErteke, Double vekonyErteke, Double osszAr, Double eloleg, Double kifizetendo, Boolean vevo,
-			Boolean fizetve) {
+			Boolean fizetve, String penznem, String szamlaSorszam, LocalDate fizetesiHatarido, LocalDate kifizetesDatum) {
 		super();
 		this.tId = tId;
 		this.tNev = tNev;
@@ -98,6 +104,10 @@ public class Keszlet {
 		this.kifizetendo = kifizetendo;
 		this.vevo = vevo;
 		this.fizetve = fizetve;
+		this.penznem = penznem;
+		this.szamlaSorszam = szamlaSorszam;
+		this.fizetesiHatarido = fizetesiHatarido;
+		this.kifizetesDatum = kifizetesDatum;
 	}
 
 	public Long getId() {
@@ -362,6 +372,38 @@ public class Keszlet {
 
 	public void setFizetve(Boolean fizetve) {
 		this.fizetve = fizetve;
+	}
+
+	public String getPenznem() {
+		return penznem;
+	}
+
+	public void setPenznem(String penznem) {
+		this.penznem = penznem;
+	}
+
+	public String getSzamlaSorszam() {
+		return szamlaSorszam;
+	}
+
+	public void setSzamlaSorszam(String szamlaSorszam) {
+		this.szamlaSorszam = szamlaSorszam;
+	}
+
+	public LocalDate getFizetesiHatarido() {
+		return fizetesiHatarido;
+	}
+
+	public void setFizetesiHatarido(LocalDate fizetesiHatarido) {
+		this.fizetesiHatarido = fizetesiHatarido;
+	}
+
+	public LocalDate getKifizetesDatum() {
+		return kifizetesDatum;
+	}
+
+	public void setKifizetesDatum(LocalDate kifizetesDatum) {
+		this.kifizetesDatum = kifizetesDatum;
 	}
 	
 	

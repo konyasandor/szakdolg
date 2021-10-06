@@ -3,15 +3,18 @@ package hu.sandorkonya.felvasarlasdb.service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import hu.sandorkonya.felvasarlasdb.model.Chart;
 import hu.sandorkonya.felvasarlasdb.model.Keszlet;
+import hu.sandorkonya.felvasarlasdb.model.Termelo;
 import hu.sandorkonya.felvasarlasdb.repository.KeszletRepository;
 
 @Service
@@ -25,6 +28,28 @@ public class KeszletService {
 	public List<Keszlet> findAll(){
 		
 		return keszletRepository.findAll();
+	}
+	
+	public List<Keszlet> findVevo(){
+		
+		List<Keszlet> vevo = new ArrayList<>();
+		List<Keszlet> keszlet = keszletRepository.findAll();
+		
+		for (Keszlet item : keszlet) {
+			if(item.getVevo()) {
+				vevo.add(item);
+			}
+		}
+		
+		return vevo;
+	}
+	
+	public void  updateVevo(Long id, LocalDate fizetes){
+		Keszlet keszletUpdate = keszletRepository.getOne(id);
+		keszletUpdate.setKifizetesDatum(fizetes);
+		keszletUpdate.setFizetve(true);
+		keszletRepository.save(keszletUpdate);
+		
 	}
 	
 	public void save(Keszlet keszlet) {
@@ -317,4 +342,30 @@ public class KeszletService {
 		
 		
 	}
+
+	public List<Keszlet> findUnpaid(){
+		
+		List<Keszlet> all = keszletRepository.findAll();
+		
+		List<Keszlet> unpaid = null;
+		
+		for (Keszlet item : all) {
+			if(item.getFizetve() != true) {
+				unpaid.add(item);
+			}
+		}
+		
+		return unpaid;
+		
+	}
+	
+	public Optional<Keszlet> findById(Long id){
+		return keszletRepository.findById(id);
+	}
+	
+	public  void delete(Long id) {
+		keszletRepository.deleteById(id);
+	}
+	
+	
 }

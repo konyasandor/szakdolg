@@ -1,5 +1,6 @@
 package hu.sandorkonya.felvasarlasdb.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -22,7 +23,7 @@ public class Termelo {
 	private Date termeloOstermeloiIgazolvanyErvenyesseg;
 	private String termeloAdoazonositoJel;
 	private String termeloAdoSzam;
-	private Date termeloSzuletesiIdo;
+	private LocalDate termeloSzuletesiIdo;
 	private String termeloSzuletesiHely;
 	private String termeloEdesAnyjaNeve ;
 	private String termeloTajSzam;
@@ -40,7 +41,7 @@ public class Termelo {
 
 	public Termelo(Long id, String termeloNev, String termeloLnev, String termeloCim,
 			String termeloOstermeloiIgazolvanySzam, Date termeloOstermeloiIgazolvanyErvenyesseg,
-			String termeloAdoazonositoJel, String termeloAdoSzam, Date termeloSzuletesiIdo,
+			String termeloAdoazonositoJel, String termeloAdoSzam, LocalDate termeloSzuletesiIdo,
 			String termeloSzuletesiHely, String termeloEdesAnyjaNeve, String termeloTajSzam,
 			String termeloCsaladiGazdasagSzam, String termeloGlobalGapSzam, String termeloTelefonSzam,
 			String termeloBankszamlaSzam) {
@@ -144,12 +145,12 @@ public class Termelo {
 	}
 
 
-	public Date getTermeloSzuletesiIdo() {
+	public LocalDate getTermeloSzuletesiIdo() {
 		return termeloSzuletesiIdo;
 	}
 
 
-	public void setTermeloSzuletesiIdo(Date termeloSzuletesiIdo) {
+	public void setTermeloSzuletesiIdo(LocalDate termeloSzuletesiIdo) {
 		this.termeloSzuletesiIdo = termeloSzuletesiIdo;
 	}
 

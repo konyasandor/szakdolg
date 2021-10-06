@@ -1,6 +1,7 @@
 package hu.sandorkonya.felvasarlasdb.controller;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -89,12 +90,7 @@ public class MainController {
 		return termeloService.findAll();
 	}
 	
-	@GetMapping("/merlegjegytablelista")
-	@ResponseBody
-	public List<Keszlet> dataListTableFill(){
-		
-		return keszletService.findAll();
-	}
+	
 	
 	
 	
@@ -256,7 +252,7 @@ public class MainController {
 							@RequestParam (required = false) String termeloLnev,
 							@RequestParam String termeloCim,
 							@RequestParam String termeloSzuletesiHely,
-							@RequestParam Date termeloSzuletesiIdo,
+							@RequestParam LocalDate termeloSzuletesiIdo,
 							@RequestParam String termeloEdesAnyjaNeve,
 							@RequestParam String termeloTelefonSzam,
 							@RequestParam String termeloTajSzam,
@@ -307,7 +303,7 @@ public class MainController {
 								@RequestParam (required = false) String termeloLnev,
 								@RequestParam String termeloCim,
 								@RequestParam String termeloSzuletesiHely,
-								@RequestParam Date termeloSzuletesiIdo,
+								@RequestParam LocalDate termeloSzuletesiIdo,
 								@RequestParam String termeloEdesAnyjaNeve,
 								@RequestParam String termeloTelefonSzam,
 								@RequestParam String termeloTajSzam,
