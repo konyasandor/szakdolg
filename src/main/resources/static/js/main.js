@@ -53,6 +53,8 @@ $(function(){
 		$('#osszAr').inputmask("setvalue",$('#elsoOsztalyErteke').inputmask("unmaskedvalue")*1 + $('#masodOsztalyErteke').inputmask("unmaskedvalue")*1 + $('#harmadOsztalyErteke').inputmask("unmaskedvalue")*1 + $('#negyedOsztalyErteke').inputmask("unmaskedvalue")*1 + $('#vastagErteke').inputmask("unmaskedvalue")*1 + $('#vekonyErteke').inputmask("unmaskedvalue")*1);
 	
 		$('#fizetendő').inputmask("setvalue",$('#osszAr').inputmask("unmaskedvalue"));
+
+		console.log("hello")
 	});
 	
 	$('#masodOsztEgysegAr').focusout(function(){
