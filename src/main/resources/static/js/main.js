@@ -55,6 +55,7 @@ $(function(){
 		$('#fizetendő').inputmask("setvalue",$('#osszAr').inputmask("unmaskedvalue"));
 
 		console.log("hello")
+		console.log("hellohello")
 	});
 	
 	$('#masodOsztEgysegAr').focusout(function(){
